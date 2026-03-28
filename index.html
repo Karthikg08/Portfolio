@@ -9,7 +9,7 @@
 <body>
 
     <!-- Navbar -->
-    <header>
+    <header class="header">
         <h2 class="logo">Karthik</h2>
         <nav>
             <a href="#home">Home</a>
@@ -22,52 +22,86 @@
 
     <!-- Home Section -->
     <section id="home" class="home">
-        <h1>Hello, I'm <span>Karthik</span></h1>
-        <p>Frontend Developer </p>
-        <a href="#projects" class="btn">View Projects</a>
+        <div class="home1">
+            <h1>Hello, I'm <span>Karthik</span></h1>
+            <p>Frontend Developer </p>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+        <div></div>
+        
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <h2>About Me</h2>
         <p>
-            I am a Frontend Developer who enjoys building responsive, user-friendly websites.
-            I also work on IoT-based projects and health monitoring systems.
-            I love learning new technologies and improving my skills every day.
+            I’m Karthik, an aspiring frontend developer with a strong focus on building clean and responsive web interfaces. 
+            I’m continuously improving my skills in modern web technologies, with the goal of becoming a skilled full-stack developer.
+
         </p>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <h2>Skills</h2>
+
         <div class="skill-container">
-            <div class="skill-box">HTML</div>
-            <div class="skill-box">CSS</div>
-            <div class="skill-box">JavaScript</div>
-            <div class="skill-box">Python</div>
-            <div class="skill-box">Git & GitHub</div>
-            <div class="skill-box">Responsive Design</div>
+            <div class="skill-box"><p>Frontend</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS(flexbox, grid )</li>
+                    <li>JavaScript (DOM Manipulation, Event Handling, Basic Logic Building)</li>
+                </ul>
+            </div>
+
+            <div class="skill-box"><p>backend </p>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            
+            <div class="skill-box"><p>Tools:</p>
+                <ul>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    
+                </ul>
+            </div>
+            
         </div>
     </section>
+
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <h4>Frontend projects</h4>
+                <ul>
+                    <li>Todo App</li>
+                    <li>amazon and youtube clone</li>
+                    <li>rock paper scissors game </li>
+                </ul>
+            </div>
 
-        <div class="project-card">
-            <h3>AI-Driven Health Monitoring System</h3>
-            <p>Dashboard for ECG/BP monitoring with AI-based fall detection.</p>
+            <div class="project-card">
+                <h4>Portfolio Website</h4>
+                <p>Your current project created using HTML, CSS, and JavaScript.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>AI-Driven Health Monitoring System</h4>
+                <p>Dashboard for ECG/BP monitoring with AI-based fall detection.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>IoT Smart Car Parking System</h4>
+                <p>Real-time parking slot monitoring using IR sensors.</p>
+            </div>
         </div>
 
-        <div class="project-card">
-            <h3>IoT Smart Car Parking System</h3>
-            <p>Real-time parking slot monitoring using IR sensors.</p>
-        </div>
-
-        <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>Your current project created using HTML, CSS, and JavaScript.</p>
-        </div>
     </section>
 
     <!-- Contact Section -->
@@ -78,7 +112,7 @@
         <p>LinkedIn: <a target="_blank" href="https://linkedin.com/in/karthikg12">linkedin.com/in/karthikg12</a></p>
     </section>
 
-    <footer>
+    <footer class="footer">
         <p>© 2025 Karthik. All Rights Reserved.</p>
     </footer>
 
