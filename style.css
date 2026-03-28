@@ -37,7 +37,7 @@ nav a{
 .home{
     background-color: #f7afaf;
     display: grid;
-    grid-template-columns: 5fr 3fr;
+    grid-template-columns: 5fr 4fr;
     gap: 10px;
     height: 600px;
 }
@@ -50,13 +50,55 @@ nav a{
     background-color: #59c29f;
     
 }
+.profile{
+    
+    width: 400px;
+    height: 400px;
+}
+.imgside{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.myname{
+    
+    font-size: 3rem;
+    font-weight: 400;
+}
+.p1about{
+    font-weight: 600;
+    padding:8px 0px;
+}
+.butns{
+    padding: 20px 0px;
+    
+    
+    
+}
+.lshome{
+    zoom: 120%;
+}
+.frtendnm{
+    color:floralwhite;
+}
+.logo1{
+    width: 50px;
+    height: 50px;
+    padding: 10px 12px;
+    
+}
+.logo1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 .btn{
-    padding: 8px 12px;
+    padding: 8px 15px;
     text-decoration: none;
     background-color: #18065c;
     color: rgb(255, 255, 255);
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     
@@ -65,13 +107,14 @@ nav a{
 /* about section */
 .about {
     background-color: #3f4f6b;
-    display: flex;
+    display: grid;
+    grid-template-columns: 4fr 5fr;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-left: 50px;
     padding-right: 50px;
-    height: 300px;
+    height: 600px;
     gap: 10px;
 }
 /*skill sec */
