@@ -12,6 +12,10 @@ body{
 section {
     scroll-margin-top: 70px; /* Adjust based on your header height */
 }
+
+
+@media (max-width: 1440px) {
+
 /* header */
 .header{
     
@@ -44,7 +48,7 @@ nav a:hover{
     background-color: #f7afaf;
     display: grid;
     grid-template-columns: 5fr 4fr;
-    gap: 10px;
+    
     height: 600px;
 }
 .home1{
@@ -58,13 +62,17 @@ nav a:hover{
 }
 .profile{
     
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    padding: 10px;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1 / 1;
 }
 .imgside{
     display: flex;
     justify-content: start;
     align-items: center;
+    
 }
 .myname{
     
@@ -241,25 +249,26 @@ nav a:hover{
     flex-direction: column;
     align-items: center;
 }
- .contact {
+.contact {
+     border-radius: 0;
     background-color: aquamarine;
     min-height: 500px;
     display: flex;
     flex-direction: row;
     align-items: stretch;
     padding: 0;
-    border-radius: 10px;
     overflow: hidden;
 }
 
 /* Left Side - Contact Info */
 .contact-left {
     flex: 1;
+    border-radius: 0;
     padding: 60px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(130deg, #667eea 0%, #764ba2 100%);
     color: white;
 }
 
@@ -365,7 +374,7 @@ nav a:hover{
 .contact-right > p {
     font-size: 14px;
     color: #666;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 }
 
 .form-group {
@@ -404,7 +413,7 @@ nav a:hover{
 
 .form-group textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 80px;
 }
 
 .form-row {
@@ -462,53 +471,80 @@ nav a:hover{
     display: block;
 }
 
-@media (max-width: 1024px) {
+}
+
+
+/*===============================================
+mobile breakpoint (768px - 1023px)*/ 
+@media (max-width: 768px) {
+    .home {
+        grid-template-columns: 1fr 1fr;
+        height: 500px;
+    }
+    .home1 {
+        padding: 20px;
+    }
+    .myname {
+        font-size: 2rem;
+    }
+    .profile{
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .about {
+        grid-template-columns: 1fr 1fr;
+        height: 500px;
+        padding: 20px;
+    }
+    .skills {
+        height: 500px;
+    }
+    .projects {
+        height: 500px;
+    }
     .contact {
         flex-direction: column;
-        min-height: auto;
+        height: auto;
+        border-radius: 0;
     }
-
-    .contact-left,
-    .contact-right {
-        padding: 50px 40px;
+    .contact-left, .contact-right {
+        
+        padding: 30px 20px;
+        width: 100%;
     }
-
-    .contact-left h2 {
-        font-size: 28px;
-    }
-
-    .contact-right h2 {
-        font-size: 28px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-left,
-    .contact-right {
-        padding: 40px 25px;
-    }
-
-    .contact-left h2,
-    .contact-right h2 {
-        font-size: 24px;
-    }
-
-    .contact-left p {
-        font-size: 14px;
-    }
-
-    .contact-info-group {
-        gap: 25px;
-    }
-
     .contact-socials {
-        gap: 10px;
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
     }
+    .contact-left p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 400px;
+    }
+    .contact-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+    /* contact right*/
+    .contact-right > p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
 }
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+}
+
 /*footer*/
 .footer {
 background-color: #3f4f6b;
