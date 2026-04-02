@@ -6,14 +6,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     
-    background: linear-gradient(
-        135deg,
-        rgb(128, 0, 0),
-        #6aa30d,
-        #0c878b,
-        #190780,
-        #8b0e0e
-    );
+    background-color: #0f0f0f; 
     min-height: 100vh;
     
 
@@ -36,6 +29,8 @@ section {
 
 
 
+
+
 /* header */
 .header{
     
@@ -48,25 +43,28 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(135deg, #354b80, #45c2f8);
+    backdrop-filter: blur(10px);
+    background: transparent;
     color: whitesmoke;
+     box-shadow: 0 12px 30px rgba(68, 67, 67, 0.959);
     
    
 
 }
 .header-title{
-    background: linear-gradient(to right, #80a74f, #3127b6);
+    background: linear-gradient(to right, #dafdff, #bab5ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-decoration: none;
     font-size: 24px;
-    font-weight:700px ;
+    font-weight:700 ;
 }
 .resbtn{
      padding: 8px 15px;
     border-width: 0px;
     text-decoration: none;
+    font-weight: 600;
     background-color: #4c059c;
     color: rgb(255, 255, 255);
     border-radius: 25px;
@@ -75,22 +73,39 @@ section {
 }
 .resbtn:hover {
     
-    box-shadow: 0 12px 30px rgba(24, 6, 92, 0.35);
-    background-color: #667eea;
-    color: rgb(255, 255, 255);
+    box-shadow: 0 8px 30px rgba(139, 138, 141, 0.719);
+    
+    
 }
 /* nav items */
-nav a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
     margin-left: 20px;
     font-size: 18px;
     font-weight: 600;
 }
-nav a:hover{
-    color: #030353;
-    transition: all 0.3s ease;
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #e05b01;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
+
+nav a:hover::after {
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* home section */
 .home{
     background-color: var(--bg-home);
@@ -109,12 +124,15 @@ nav a:hover{
     
 }
 .profile{
-    
+    border-radius: 50%;
+    border-width: 0;
     width: 100%;
     padding: 10px;
     max-width: 400px;
     height: auto;
+    background-color: rgb(168, 166, 166);
     aspect-ratio: 1 / 1;
+    box-shadow: 0 10px 90px rgba(64, 191, 196, 0.774);
 }
 .imgside{
     display: flex;
@@ -122,45 +140,56 @@ nav a:hover{
     align-items: center;
     
 }
-.myname{
-    color: lavenderblush;
-    font-size: 3rem;
-    font-weight: 400;
-}
-.p1about{
+.mynameup{
+    color: whitesmoke;
+    font-size: 1.2rem;
     font-weight: 600;
-    padding:8px 0px;
 }
+.myname{
+    background: linear-gradient(90deg, #cdf363, #995201);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.mynamedown{
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+
 .butns{
     padding: 20px 0px;
-    
-    
     
 }
 .lshome{
     zoom: 120%;
 }
 .frtendnm{
-    color:rgb(214, 55, 116);
+    color:rgb(223, 65, 65);
 }
 .logo{
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding-top: 10px;
+     
 }
 .logo1{
-    width: 25px;
-    height: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+    width: 30px;
+    height: 30px;
+    border-radius: 35%;
+    transition: transform 0.3s ease;     
     
 }
 .logo1:hover {
     cursor: pointer;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateZ(50px) scale(1.2);
+    box-shadow: 0 8px 50px rgb(86, 227, 245);
 }
 
 .btn{
@@ -180,10 +209,10 @@ nav a:hover{
 }
 .btn:hover {
    
-    box-shadow: 0 12px 30px rgba(24, 6, 92, 0.35);
-    background-color: #667eea;
+    box-shadow: 0 8px 30px rgba(92, 92, 94, 0.562);
     
-    color: black;
+    
+    
 }
 /* about section */
 .about {
@@ -197,6 +226,19 @@ nav a:hover{
     padding-right: 50px;
     height: 600px;
     gap: 10px;
+}
+
+.p1about{
+    color: #f5f0e6;
+    font-weight: 600;
+    padding:8px 0px;
+}
+.abouthed{
+    color: #dbe7e3;
+
+}
+.paraabout{
+    color: whitesmoke;
 }
 
 /*skill sec */
