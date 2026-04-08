@@ -10,7 +10,7 @@ body{
     min-height: 100vh;
     
 
-    color: black;
+    color: rgb(255, 248, 248);
     padding-top: 70px;
 }  
 section {
@@ -22,8 +22,9 @@ section {
     --bg-home1: transparent;
     --bg-about: transparent;
     --bg-skills: transparent;
-    --bg-skillsbox: #ffffff;
+    --bg-skillsbox: white;
     --bg-project: transparent;
+    --bg-contact: rgb(1, 12, 44);
 }
 
 
@@ -46,7 +47,7 @@ section {
     backdrop-filter: blur(10px);
     background: transparent;
     color: whitesmoke;
-     box-shadow: 0 12px 30px rgba(68, 67, 67, 0.959);
+    box-shadow: 0 12px 30px rgba(51, 50, 50, 0.959);
     
    
 
@@ -112,7 +113,7 @@ nav a:hover::after {
     display: grid;
     grid-template-columns: 5fr 4fr;
     
-    height: 600px;
+    min-height: 500px;
 }
 .home1{
     display: flex;
@@ -128,7 +129,7 @@ nav a:hover::after {
     border-width: 0;
     width: 100%;
     padding: 10px;
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
     background-color: rgb(168, 166, 166);
     aspect-ratio: 1 / 1;
@@ -224,7 +225,7 @@ nav a:hover::after {
     align-items: center;
     padding-left: 50px;
     padding-right: 50px;
-    height: 600px;
+    min-height: 500px;
     gap: 10px;
 }
 
@@ -247,8 +248,8 @@ nav a:hover::after {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 600px;
     gap: 10px;
-    height: 600px;
     padding: 5px;
 }
 .skill-container{
@@ -305,7 +306,7 @@ nav a:hover::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 600px;
+    min-height: 600px;
     gap: 10px;
     padding: 5px;
     
@@ -320,6 +321,7 @@ nav a:hover::after {
     
 }
 .project-card{
+    color: #000;
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
@@ -350,7 +352,8 @@ nav a:hover::after {
 
 
 .contact {
-     border-radius: 0;
+    background-color: var(--bg-contact);
+    border-radius: 0;
     height: 500px;
     display: flex;
     flex-direction: row;
@@ -571,22 +574,48 @@ nav a:hover::after {
 }
 /* larger screens (2560px and above) */
 @media (min-width: 2560px) {
+    body{
+    font-family: Arial, Helvetica, sans-serif;
+    
+    background-color: #0f0f0f; 
+    min-height: 100vh;
+
+    color: rgb(255, 248, 248);
+    padding-top: 100px;
+
+} 
+.header{
+min-height: 100px;
+}
+.header-title{
+font-size: 40px;
+
+}
+.resbtn{
+    font-size: 30px;
+}
+nav a{
+    font-size: 24px;
+}
     .home {
         grid-template-columns: repeat(2, 1fr);
-        
+        min-height: 1000px;
+        width: 100%;
     }
     .home1 {
         padding: 20px;
+        zoom: 1.5;
     }
     .myname {
         font-size: 3.5rem;
     }
     .profile{
-        max-width: 500px;
-        max-height: 500px;
+        min-width: 600px;
+        min-height: 600px;
     }
     .about {
         grid-template-columns: repeat(2, 1fr);
+        min-height: 1000px;
         
         
         padding: 20px;
@@ -598,6 +627,31 @@ nav a:hover::after {
     }
     .abouttext{
         font-size: 30px;
+    }
+    .skills{
+        min-height: 1000px;
+        padding-top: 70px;
+    }
+    .abouthed{
+        font-size: 40px;
+    }
+    .skill-container{
+        zoom: 1.7;
+    }
+    .projects{
+        min-height: 1000px;
+        padding-top: 70px;
+    }
+    .project-container{
+        zoom: 1.8;
+    }
+    .contact{
+        min-height: 500px;
+        zoom: 1.9;
+        padding: 0;
+    }
+    .footer{
+        zoom: 1.5;
     }
 }
 /* laptop breakpoint (1440px - 2560px)*/
@@ -613,9 +667,13 @@ nav a:hover::after {
         font-size: 2.5rem;
     }
     .profile{
-        max-width: 400px;
-        max-height: 400px;
+        max-width: 350px;
+        max-height: 350px;
     }
+    .abouthed{
+        padding-top: 20px;
+    }
+    
     .about {
         grid-template-columns:  repeat(2, 1fr);
         
@@ -635,7 +693,7 @@ tablet breakpoint (768px - 1023px)*/
 @media (max-width: 768px) {
     .home {
         grid-template-columns: 1fr 1fr;
-        height: 500px;
+        min-height: 450px;
         width: 100%;
     }
     .btn{
@@ -648,8 +706,6 @@ tablet breakpoint (768px - 1023px)*/
     cursor: pointer;
     font-size: 16px;
     
-    
-    
 }
     .home1 {
         padding: 20px;
@@ -658,13 +714,22 @@ tablet breakpoint (768px - 1023px)*/
         font-size: 2rem;
     }
     .profile{
-        max-width: 300px;
-        max-height: 300px;
+        max-width: 250px;
+        max-height: 250px;
+        
+    }
+    .abouthed{
+        padding-top: 0px;
     }
     .about {
         grid-template-columns: 1fr 1fr;
+        display: grid;
+        justify-content: start;
+        align-content: center;
         
-        padding: 20px;
+        min-height: 500px;
+        padding: 10px;
+       
     }
     
     
@@ -714,7 +779,7 @@ tablet breakpoint (768px - 1023px)*/
     /* project section */
     .projects {
         padding: 40px 20px;
-        min-height: auto;
+         min-height: 500px;
     }
  
     .project-container {
@@ -741,7 +806,7 @@ tablet breakpoint (768px - 1023px)*/
     /*skill section*/
     .skills {
         padding: 40px 20px;
-        min-height: auto;
+        min-height: 500px;
     }
  
     .skill-container {
@@ -768,7 +833,28 @@ tablet breakpoint (768px - 1023px)*/
 
 }
 
-/* mobile breakpoint (max-width: px) */
+/* mobile breakpoint (max-width: 640px) */
+
+@media (max-width: 640px) {
+    nav a{
+        font-size: 16px;
+    }
+    .home {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        padding: 20px;
+    }
+    .home1 {
+        padding: 20px 10px;
+    }
+    .myname {
+        font-size: 1.5rem;
+    }
+    .profile {
+        max-width: 250px;
+    }
+    /* ... more mobile styles */
+}
 
 
 /*footer*/
