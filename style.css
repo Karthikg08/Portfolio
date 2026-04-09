@@ -6,7 +6,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     
-    background-color: #0f0f0f; 
+    background-color: #101414; 
     min-height: 100vh;
     
 
@@ -53,7 +53,7 @@ section {
 
 }
 .header-title{
-    background: linear-gradient(to right, #dafdff, #bab5ff);
+    background: #3ec2ff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -62,18 +62,18 @@ section {
     font-weight:700 ;
 }
 .resbtn{
-     padding: 8px 15px;
+    padding: 8px 15px;
     border-width: 0px;
     text-decoration: none;
     font-weight: 600;
-    background-color: #4c059c;
+    background:linear-gradient(45deg, #4a98e0, #1417d1);
     color: rgb(255, 255, 255);
     border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
 }
 .resbtn:hover {
-    
+    background: #2e8fdf;
     box-shadow: 0 5px 30px rgba(139, 138, 141, 0.719);
     
     
@@ -81,9 +81,9 @@ section {
 /* nav items */
 
 nav a {
-  position: relative;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+    position: relative;
+   text-decoration: none;
+    color: rgb(255, 255, 255);
     margin-left: 20px;
     font-size: 18px;
     font-weight: 600;
@@ -96,15 +96,20 @@ nav a::after {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #e05b01;
+  
+  background-color: #3ec2ff;
   transition: all 0.3s ease;
   transform: translateX(-50%);
+}
+nav a:hover {
+    color: #2839d6;  /* ← ADD THIS (change to blue) */
 }
 
 nav a:hover::after {
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
+  
 }
 
 /* home section */
@@ -131,7 +136,7 @@ nav a:hover::after {
     padding: 10px;
     max-width: 350px;
     height: auto;
-    background-color: rgb(168, 166, 166);
+    background-color: rgba(64, 192, 196, 0.247);
     aspect-ratio: 1 / 1;
     box-shadow: 0 10px 90px rgba(64, 191, 196, 0.774);
 }
@@ -147,7 +152,7 @@ nav a:hover::after {
     font-weight: 600;
 }
 .myname{
-    background: linear-gradient(90deg, #cdf363, #995201);
+    background: linear-gradient(90deg, #3ec2ff, #1417d1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -177,31 +182,41 @@ nav a:hover::after {
     justify-content: start;
     align-items: center;
     gap: 20px;
-    padding-top: 10px;
+    
+    
      
 }
-.logo1{
-    width: 30px;
-    height: 30px;
-    border-radius: 35%;
-    transition: transform 0.3s ease;     
-    
+.logo a {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border: 2px solid rgb(88, 140, 253);
+    transition: transform 0.3s ease-in-out;    
+    padding: 8px; 
+    background-color: transparent;
+    color: rgb(149, 225, 255);
+    border-radius: 50%;
+    margin: 0.7rem 0.1rem;
 }
-.logo1:hover {
+.logo a:hover {
     cursor: pointer;
-    transform: translateZ(50px) scale(1.2);
-    box-shadow: 0 5px 20px rgb(86, 227, 245);
+    color: rgb(255, 255, 255);
+    background-color: rgba(80, 112, 255, 0.61);
+    transform: scale(1.2) translateZ(50px) ;
+    box-shadow: 0 5px 20px rgb(30, 30, 31);
 }
 
 .btn{
     padding: 8px 15px;
     border-width: 0px;
     text-decoration: none;
-    background-color: #18065c;
+    background:linear-gradient(45deg, #4a98e0, #1417d1);
     color: rgb(255, 255, 255);
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
     
     
    
@@ -209,8 +224,8 @@ nav a:hover::after {
     
 }
 .btn:hover {
-   
-    box-shadow: 0 5px 30px rgba(92, 92, 94, 0.562);
+    background: #2e8fdf;
+    box-shadow: 0 5px 20px rgba(59, 59, 61, 0.562);
     
     
     
@@ -228,14 +243,23 @@ nav a:hover::after {
     min-height: 500px;
     gap: 10px;
 }
-
+.gradnt{
+    background: linear-gradient(45deg, #4a98e0, #1417d1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .p1about{
-    color: #f5f0e6;
+     background: linear-gradient(45deg, #85c3fc, #050781);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 600;
     padding:8px 0px;
 }
 .abouthed{
-    color: #dbe7e3;
+    font-size: 35px;
+    color: #f7faff;
 
 }
 .paraabout{
@@ -259,15 +283,17 @@ nav a:hover::after {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  
  
 }
 
 .skill-box {
-  background-color: var(--bg-skillsbox);
+  
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(45deg, #85c3fc, #050781);
 }
 
 .skill-box:hover {
@@ -279,11 +305,13 @@ nav a:hover::after {
   margin: 0 0 0.5rem 0;
   font-size: 18px;
   font-weight: 600;
-  color: #3f4f6b;
+  color: #000000;
   text-transform: capitborderalize;
+  
 }
 
 .skill-box ul {
+    
   list-style: none;
   padding: 0;
   margin: 0;
@@ -291,12 +319,13 @@ nav a:hover::after {
 
 .skill-box li {
   padding: 0.5rem 0;
-  color: #000000;
+  color: #ffffff;
   font-size: 16px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #000000;
 }
 
 .skill-box li:last-child {
+    
   border-bottom: none;
 }
 
@@ -321,8 +350,8 @@ nav a:hover::after {
     
 }
 .project-card{
-    color: #000;
-    background-color: white;
+    color: #0a0a0a;
+    background: linear-gradient(45deg, #85c3fc, #050781);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -341,6 +370,7 @@ nav a:hover::after {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .project-card h4 {
+    color: #000000;
     padding-bottom: 5px;
 }
 .project-card:hover{    
@@ -348,6 +378,11 @@ nav a:hover::after {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 
 }
+.project-card li,p {
+    color: #ffffff;
+   
+}
+
 /*contact section*/
 
 
@@ -527,7 +562,7 @@ nav a:hover::after {
 .submit-btn {
     width: 100%;
     padding: 14px 32px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4360e4 0%, #4b54a2 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -654,7 +689,7 @@ nav a{
         zoom: 1.5;
     }
 }
-/* laptop breakpoint (1440px - 2560px)*/
+/* laptop breakpoint (768px - 1440px)*/
 @media (max-width: 1440px) {
     .home {
         grid-template-columns: repeat(2, 1fr);
@@ -675,7 +710,9 @@ nav a{
     }
     
     .about {
-        grid-template-columns:  repeat(2, 1fr);
+       
+        grid-template-columns: 1fr 1fr;
+        min-height: 535px;
         
         padding: 20px;
     }
@@ -689,7 +726,7 @@ nav a{
 
 
 /*===============================================
-tablet breakpoint (768px - 1023px)*/ 
+tablet breakpoint (768px)*/ 
 @media (max-width: 768px) {
     .home {
         grid-template-columns: 1fr 1fr;
