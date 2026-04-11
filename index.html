@@ -4,19 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karthik | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-    (function(){
-        emailjs.init({
-            publicKey: "B4dhtM5A8Pgg7bmvv",
-        });
-    })();
-    </script>
+    
 </head>
 <body>
 
@@ -31,14 +21,12 @@
             <a  href="#contact">Contact</a>
         </nav>
         
-        <button class="resbtn" onclick="window.open('Karthik_Resume2.pdf', '_blank')">
-                    Resume
-         </button>
+       
          
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="home">
+    <section id="home" class="home js-home">
         <div class="home1">
             <div class="imgside">
                 <img src="profile-pic.png" alt="image" class="profile">
@@ -71,9 +59,9 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about js-about">
         <div class="aboutimg">
-            <img src="profile-pic.png" alt="image" class="profile">
+            <img src="profile-pic.png" alt="image" class="profile fadeup">
         </div>
         <div class="abouttext">
             <h2 class="abouthed">About <span class="gradnt">Me</span></h2>
@@ -88,10 +76,10 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills js-skills">
         <h2 class="abouthed">Skills</h2>
 
-        <div class="skill-container">
+        <div class="skill-container fadeup">
             <div class="skill-box"><p>Frontend</p>
                 <ul>
                     <li>HTML</li>
@@ -120,9 +108,9 @@
 
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects js-projects">
         <h2 class="abouthed">Projects</h2>
-        <div class="project-container">
+        <div class="project-container fadeup">
             <div class="project-card">
                 <h4>Frontend projects</h4>
                 <ul>
@@ -152,7 +140,7 @@
     </section>
 
     <!-- Contact Section -->
-      <section id="contact" class="contact">
+      <section id="contact" class=" contact js-contact">
         <!-- Left Section -->
         <div class="contact-left">
             <h2 >Get In Touch</h2>
@@ -242,6 +230,16 @@
         <p>© 2025 Karthik. All Rights Reserved.</p>
     </footer>
 
-    
+    <script src="script.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "B4dhtM5A8Pgg7bmvv",
+        });
+    })();
+    </script>
 </body>
 </html>
