@@ -31,7 +31,7 @@ section {
 .fadeup{
     animation: textappear both;
     animation-timeline: view() ;
-    animation-range: entry 20% cover 50%;
+    animation-range: entry 20% cover 30%;
 
 }
 
@@ -118,6 +118,7 @@ section {
     
 }
 /* nav items */
+
 
 nav a {
     position: relative;
@@ -410,6 +411,7 @@ nav a:hover::after {
 }
 .projectbtn{
     display: inline-block;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
