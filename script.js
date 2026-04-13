@@ -105,10 +105,43 @@ function showMessage(text, type) {
     }, 5000);
 }
 
-// scroll animations //
+// ----------------- sidebar toggle --------------/
 
-
-    
-    // ===== SCROLL ANIMATIONS =====
+ const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('sidebar');
+        const navOverlay = document.getElementById('navOverlay');
+        const navLinks = nav.querySelectorAll('.sba');
+ 
+        // Toggle menu
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+ 
+        // Close menu when clicking overlay
+        navOverlay.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+ 
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        });
+ 
+        // Close menu on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                navOverlay.classList.remove('active');
+            }
+        });
     
     

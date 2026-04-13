@@ -13,14 +13,35 @@
     <!-- Navbar -->
     <header class="header">
         <a class="header-title" href="#home">Karthik</a>
-        <nav class="navItems">
-            <a  href="#home">Home</a>
-            <a  href="#about">About</a>
-            <a  href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a  href="#contact">Contact</a>
+            <nav class="navItems">
+            <a class="navtext" href="#home">Home</a>
+            <a class="navtext" href="#about">About</a>
+            <a class="navtext" href="#skills">Skills</a>
+            <a class="navtext" href="#projects">Projects</a>
+            <a class="navtext" href="#contact">Contact</a>
         </nav>
-        <div></div>
+
+        <div>
+            
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+ 
+            <!-- Navigation Overlay (for closing sidebar on click) -->
+            <div class="nav-overlay" id="navOverlay"></div>
+        
+        <nav class="sidebar" id="sidebar">
+            <a class="sba" href="#home">Home</a>
+            <a class="sba" href="#about">About</a>
+            <a class="sba" href="#skills">Skills</a>
+            <a class="sba" href="#projects">Projects</a>
+            <a class="sba" href="#contact">Contact</a>
+        </nav>
+      
+        </div>
+        
         
        
          
@@ -141,9 +162,9 @@
     </section>
 
     <!-- Contact Section -->
-      <section id="contact" class=" contact js-contact imgReveal">
+      <section id="contact" class=" contact js-contact ">
         <!-- Left Section -->
-        <div class="contact-left">
+        <div class="contact-left imgReveal">
             <h2 >Get In Touch</h2>
             <p>Have a project in mind or want to collaborate? I'd love to hear from you. Send me a message and I'll get back to you as soon as possible.</p>
  
