@@ -1,4 +1,30 @@
 
+// ===== SCROLL ANIMATION WITH INTERSECTION OBSERVER =====
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            
+        }else {
+            entry.target.classList.remove('animate-in'); // 👈 bring it back to hidden
+        }
+    });
+}, observerOptions);
+
+
+// Observe all elements with slide animation classes
+document.addEventListener('DOMContentLoaded', () => {
+    const slideElements = document.querySelectorAll('.slide-left, .slide-right, .slide-up, .fade-in-scale');
+    slideElements.forEach(el => observer.observe(el));
+});
+
+
+
 
 
  // ===== SOCIAL MEDIA HANDLER =====
@@ -134,7 +160,21 @@ function showMessage(text, type) {
                 navOverlay.classList.remove('active');
             });
         });
- 
+
+        //Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        //Close menu when scrolling 
+        document.addEventListener('scroll', () => {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+
         // Close menu on ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {

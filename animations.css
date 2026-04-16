@@ -1,0 +1,79 @@
+/* ===== SCROLL ANIMATIONS ===== */
+
+/* Slide from Left Animation */
+.slide-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide from Right Animation */
+.slide-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-right.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide from Bottom (Slide Up) Animation */
+.slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-up.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In with Scale Animation */
+.fade-in-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-scale.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== STAGGERED ANIMATIONS (for multiple elements) ===== */
+
+/* Child elements with stagger delay */
+.slide-left.animate-in ~ .slide-left,
+.slide-right.animate-in ~ .slide-right,
+.slide-up.animate-in ~ .slide-up {
+    animation-delay: 0.1s;
+}
+
+/* Alternative: Using nth-child for consistent stagger */
+.slide-left:nth-child(1) { transition-delay: 0s; }
+.slide-left:nth-child(2) { transition-delay: 0.1s; }
+.slide-left:nth-child(3) { transition-delay: 0.2s; }
+.slide-left:nth-child(4) { transition-delay: 0.3s; }
+
+.slide-right:nth-child(1) { transition-delay: 0s; }
+.slide-right:nth-child(2) { transition-delay: 0.1s; }
+.slide-right:nth-child(3) { transition-delay: 0.2s; }
+.slide-right:nth-child(4) { transition-delay: 0.3s; }
+
+.slide-up:nth-child(1) { transition-delay: 0s; }
+.slide-up:nth-child(2) { transition-delay: 0.1s; }
+.slide-up:nth-child(3) { transition-delay: 0.2s; }
+.slide-up:nth-child(4) { transition-delay: 0.3s; }
+
+.fade-in-scale:nth-child(1) { transition-delay: 0s; }
+.fade-in-scale:nth-child(2) { transition-delay: 0.1s; }
+.fade-in-scale:nth-child(3) { transition-delay: 0.2s; }
+.fade-in-scale:nth-child(4) { transition-delay: 0.3s; }

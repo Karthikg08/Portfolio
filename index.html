@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karthik | Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -49,12 +50,12 @@
 
     <!-- Home Section -->
     <section id="home" class="home js-home ">
-        <div class="home1">
+        <div class="home1 slide-left">
             <div class="imgside">
                 <img src="profile-pic.png" alt="image" class="profile">
             </div>
         </div>
-        <div class="textside">
+        <div class="textside slide-right">
             <div class="lshome">
                 <p class="mynameup">Hello, It's Me </p>
                 <p class="myname">Karthik G</p>
@@ -81,13 +82,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about js-about">
-        <div class="aboutimg">
-            <img src="profile-pic.png" alt="image" class="profile imgReveal">
+    <section id="about" class="about js-about ">
+        <div class="aboutimg slide-up">
+            <img src="profile-pic.png" alt="image" class="profile ">
         </div>
-        <div class="abouttext">
-            <h2 class="abouthed fadeup">About <span class="gradnt">Me</span></h2>
-            <p class="p1about fadeup" >Web Developer</p>
+        <div class="abouttext slide-up">
+            <h2 class="abouthed ">About <span class="gradnt">Me</span></h2>
+            <p class="p1about " >Web Developer</p>
             <p class="paraabout">
                 I’m Karthik, an ECE student with a strong interest in web development. I’m currently focused on improving my frontend skills and building a solid foundation in modern web technologies.
                 I enjoy creating clean and user-friendly interfaces and continuously learning new concepts to grow as a developer. My goal is to become a skilled full-stack developer and work on real-world applications.
@@ -98,11 +99,11 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills js-skills">
+    <section id="skills" class="skills js-skills slide-up ">
         <h2 class="abouthed fadeup">Skills</h2>
 
-        <div class="skill-container fadeup">
-            <div class="skill-box imgReveal"><p>Frontend</p>
+        <div class="skill-container ">
+            <div class="skill-box js-skill-card"><p>Frontend</p>
                 <ul>
                     <li>HTML</li>
                     <li>CSS(flexbox, grid )</li>
@@ -110,14 +111,14 @@
                 </ul>
             </div>
 
-            <div class="skill-box imgReveal"><p>backend </p>
+            <div class="skill-box js-skill-card"><p>backend </p>
                 <ul>
                     <li>JavaScript</li>
                     <li>Python</li>
                 </ul>
             </div>
             
-            <div class="skill-box imgReveal"><p>Tools</p>
+            <div class="skill-box js-skill-card"><p>Tools</p>
                 <ul>
                     <li>Git</li>
                     <li>GitHub</li>
@@ -130,11 +131,11 @@
 
 
     <!-- Projects Section -->
-    <section id="projects" class="projects js-projects">
-        <h2 class="abouthed fadeup">Projects</h2>
-        <div class="project-container fadeup">
-            <div class="project-card imgReveal">
-                <h4>Frontend projects</h4>
+    <section id="projects" class="projects js-projects slide-up ">
+        <h2 class="abouthed ">Projects</h2>
+        <div class="project-container ">
+            <div class="project-card ">
+                <p>Frontend projects</p>
                 <ul>
                     <li>Todo App</li>
                     <li>amazon and youtube clone</li>
@@ -143,26 +144,33 @@
                 <a  class="projectbtn js-github">View on GitHub</a>
             </div>
 
-            <div class="project-card imgReveal">
-                <h4>Portfolio Website</h4>
-                <p>Your current project created using HTML, CSS, and JavaScript.</p>
+            <div class="project-card ">
+                <p>Portfolio Website</p>
+                <ul>
+                    <li>Your current project created using HTML, CSS, and JavaScript.</li>
+                </ul>
             </div>
 
             <div class="project-card">
-                <h4>AI-Driven Health Monitoring System</h4>
-                <p>Dashboard for ECG/BP monitoring with AI-based fall detection.</p>
+                <p>AI-Driven Health Monitoring System</p>
+                <ul>
+                    <li>Dashboard for ECG/BP monitoring with AI-based fall detection.</li>
+                </ul>
+                
             </div>
 
-            <div class="project-card imgReveal">
-                <h4>IoT Smart Car Parking System</h4>
-                <p>Real-time parking slot monitoring using IR sensors.</p>
+            <div class="project-card ">
+                <p>IoT Smart Car Parking System</p>
+                <ul>
+                    <li>Real-time parking slot monitoring using IR sensors.</li>
+                </ul>
             </div>
         </div>
 
     </section>
 
     <!-- Contact Section -->
-      <section id="contact" class=" contact js-contact ">
+      <section id="contact" class=" contact js-contact slide-up ">
         <!-- Left Section -->
         <div class="contact-left imgReveal">
             <h2 >Get In Touch</h2>
