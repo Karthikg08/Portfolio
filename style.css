@@ -41,7 +41,7 @@ section {
   opacity: 0;
   transform: translateY(50px);
   
-  transition: all 0.8s ease;
+  transition: all 0.6s ease;
 }
 
 .show {
@@ -73,7 +73,7 @@ section {
 }
 
 .header-title{
-    background: #3ec2ff;
+    background: linear-gradient(90deg, #66ecfd, #0058fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -131,7 +131,7 @@ section {
     top: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, #667eea, #764ba2);
+    background: linear-gradient(180deg, #3c4fa7, #764ba2);
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.3s ease;
@@ -176,7 +176,7 @@ section {
     right: 20px;
     width: 40px;
     height: 40px;
-    background: rgb(170, 178, 255);
+    background: rgb(120, 132, 238);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -201,7 +201,7 @@ section {
 .menu-toggle span {
     width: 24px;
     height: 3px;
-    background: #333;
+    background: #ffffff;
     border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -395,10 +395,11 @@ section {
 .btn:hover {
     background: #2e8fdf;
     box-shadow: 0 5px 20px rgba(59, 59, 61, 0.562);
-    
-    
-    
+ 
 }
+
+
+
 /* about section */
 
 /*.about is combine with .home*/
