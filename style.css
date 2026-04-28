@@ -5,10 +5,10 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url('598844.jpg');
+    background-image: url('backgimg.jpg');
     background-size: cover;
     background-position: center;
-    
+    background-color: rgb(7, 8, 31);
     min-height: 100vh;
     
     overflow-x: hidden;
@@ -434,7 +434,11 @@ section {
 }
 .abouthed{
     font-size: 35px;
-    color: #f7faff;
+    
+     background: linear-gradient(90deg, #fcfcfc, #924fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 
 }
 .paraabout{
