@@ -391,9 +391,9 @@ section {
 
   
     display: inline-block;
-  transition: all 0.4s ease-in-out;
-  transform-style: preserve-3d;
- 
+    transition: all 0.4s ease-in-out;
+    transform-style: preserve-3d;
+    
    
     
    
@@ -403,7 +403,8 @@ section {
 .btn:hover {
     background: #2935e4;
     box-shadow: 0 5px 20px rgba(59, 59, 61, 0.562);
-     transform: translateZ(40px) scale(1.08);
+
+    transform: translateZ(40px) scale(1.08);
 }
 
 
