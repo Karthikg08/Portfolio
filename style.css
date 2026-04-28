@@ -338,10 +338,12 @@ section {
 
 
 
-.butns{
-    padding: 20px 0px;
+.butns {
+    padding: 10px 0px;
     
 }
+
+
 .lshome{
     zoom: 120%;
 }
@@ -354,8 +356,7 @@ section {
     align-items: center;
     gap: 20px;
     
-    
-     
+
 }
 .logo a {
     display: inline;
@@ -380,7 +381,6 @@ section {
 
 .btn{
     padding: 8px 15px;
-    border-width: 0px;
     text-decoration: none;
     background:linear-gradient(45deg, #4a98e0, #1417d1);
     color: rgb(255, 255, 255);
@@ -388,16 +388,22 @@ section {
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    
+
+  
+    display: inline-block;
+  transition: all 0.4s ease-in-out;
+  transform-style: preserve-3d;
+ 
+   
     
    
     
     
 }
 .btn:hover {
-    background: #2e8fdf;
+    background: #2935e4;
     box-shadow: 0 5px 20px rgba(59, 59, 61, 0.562);
- 
+     transform: translateZ(40px) scale(1.08);
 }
 
 
@@ -435,7 +441,7 @@ section {
 .abouthed{
     font-size: 35px;
     
-     background: linear-gradient(90deg, #fcfcfc, #924fff);
+     background: linear-gradient(90deg, #cdbfff, #023dff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
