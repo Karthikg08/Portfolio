@@ -481,7 +481,7 @@ section {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: linear-gradient(45deg, #85c3fc, #050781);
+  background: linear-gradient(45deg, #00407c, #70c6f8);
 }
 
 .skill-box:hover {
@@ -543,7 +543,7 @@ section {
 }
 .project-card{
     color: #0a0a0a;
-    background: linear-gradient(45deg, #85c3fc, #050781);
+    background: linear-gradient(45deg, #00407c, #70c6f8);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(131, 131, 131, 0.1);
