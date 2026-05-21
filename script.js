@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const github = document.querySelectorAll('.js-github');
 
 github.forEach((github) => {
-     github.addEventListener('click', () => {
+     github.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event from bubbling up to parent elements
     window.open("https://github.com/karthikg08","_blank");
 });
 });
@@ -39,7 +40,8 @@ github.forEach((github) => {
 const linkedin = document.querySelectorAll('.js-linkedin');
 
 linkedin.forEach((linkedin) => {
-    linkedin.addEventListener('click', () => {
+    linkedin.addEventListener('click', (e) => {
+        e.stopPropagation();
     window.open("https://www.linkedin.com/in/karthikg12/","_blank");
 });
 });
@@ -47,7 +49,8 @@ linkedin.forEach((linkedin) => {
 const instagram = document.querySelectorAll('.js-instagram');
 
 instagram.forEach((instagram) => {
-    instagram.addEventListener('click', () => {
+    instagram.addEventListener('click', (e) => {
+        e.stopPropagation();
     window.open("https://instagram.com/i.kxrthik","_blank");
 });
 });
