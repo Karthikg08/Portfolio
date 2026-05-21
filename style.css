@@ -172,7 +172,10 @@ section {
 
 .menu-toggle {
     display: none;
+<<<<<<< HEAD
     position: relative;
+=======
+>>>>>>> aee7782595f3d872957cd7a6f7a51f5d6bd13038
     border: none;
     width: 40px;
     height: 40px;
