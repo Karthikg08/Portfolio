@@ -80,7 +80,7 @@ section {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 20px;
     font-weight:700 ;
 }
 .resbtn{
@@ -173,28 +173,20 @@ section {
 
 .menu-toggle {
     display: none;
-    position: fixed;
-    top: 15px;
-    right: 20px;
+    border: none;
     width: 40px;
     height: 40px;
-    background: rgb(13, 13, 14);
-    border: 1px solid #d4d4d4;
-    border-radius: 10px;
+    background: transparent;
     cursor: pointer;
     z-index: 1000;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 6px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    gap: 5px;
     transition: all 0.3s ease;
     
 }
 
-.menu-toggle:hover {
-    background: #667eea;
-}
 
 .menu-toggle:hover span {
     background: white;
@@ -204,7 +196,6 @@ section {
     width: 24px;
     height: 3px;
     background: #b8b5b5;
-    border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -431,18 +422,13 @@ section {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.p1about{
-     background: linear-gradient(45deg, #85c3fc, #0206c0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 600;
+
     
-}
+
 .abouthed{
     font-size: 35px;
     
-     background: linear-gradient(90deg, #cdbfff, #023dff);
+     background: linear-gradient(90deg, #b37f11, #48eaff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

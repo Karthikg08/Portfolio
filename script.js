@@ -10,8 +10,8 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
             
-        }else {
-            entry.target.classList.remove('animate-in'); // 👈 bring it back to hidden
+            // Animation only once
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
