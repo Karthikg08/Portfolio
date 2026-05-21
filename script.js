@@ -164,7 +164,9 @@ function showMessage(text, type) {
         //Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-                closeMenu();
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                navOverlay.classList.remove('active');
             }
         });
 
