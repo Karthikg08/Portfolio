@@ -1,4 +1,93 @@
 
+// ======= typo animation ======
+const phrases = [
+     "Front-End Developer.",
+     "Creative Thinker.",
+        "Problem Solver.",
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function type() {
+      const current = phrases[phraseIndex];
+
+      if (!deleting) {
+        charIndex++;
+        document.getElementById('output').textContent = current.slice(0, charIndex);
+
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(type, 1400); // pause before deleting
+          return;
+        }
+        setTimeout(type, 80); // typing speed
+
+      } else {
+        charIndex--;
+        document.getElementById('output').textContent = current.slice(0, charIndex);
+
+        if (charIndex === 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(type, 300); // pause before next phrase
+          return;
+        }
+        setTimeout(type, 40); // deleting speed (faster)
+      }
+    }
+
+    
+    setTimeout(type, 1500); // initial delay before starting
+
+
+
+// ===== skill card animation =====
+document.querySelectorAll(".skill-card").forEach(card => {
+  card.querySelector(".skill-bar-fill").style.width = "0%";
+});
+
+function animateCard(card) {
+  const pct = parseInt(card.dataset.pct);
+  const bar = card.querySelector(".skill-bar-fill");
+  const label = card.querySelector(".skill-pct");
+
+  card.classList.add("visible");
+
+  setTimeout(() => {
+    bar.style.transition = "width 0.9s cubic-bezier(0.22, 1, 0.36, 1)";
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        bar.style.width = pct + "%";
+      });
+    });
+
+    let start = null;
+    const duration = 3000;
+    function step(ts) {
+      if (!start) start = ts;
+      const prog = Math.min((ts - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - prog, 3);
+      label.textContent = Math.round(ease * pct) + "%";
+      if (prog < 1) requestAnimationFrame(step);
+      else label.textContent = pct + "%";
+    }
+    requestAnimationFrame(step);
+  }, 450);
+}
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCard(e.target);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".skill-card").forEach(c => io.observe(c));
+
 // ===== SCROLL ANIMATION WITH INTERSECTION OBSERVER =====
 const observerOptions = {
     threshold: 0.1,

@@ -60,7 +60,7 @@
             <div class="lshome">
                 <p class="mynameup">Hello, It's Me </p>
                 <p class="myname">Karthik G</p>
-                <p class="mynamedown">And I'm a <span class="frtendnm">Front-End Developer </span></p>
+                <p class="mynamedown">And I'm a <span class="frtendnm" id="output"> </span><span class="cursor"></span> </p>
             </div>
             <div class="logo">
                 
@@ -89,7 +89,7 @@
             <img src="profile-pic.png" alt="image" class="profile ">
         </div>
         <div class="abouttext slide-up">
-            <h2 class="abouthed ">About <span class="gradnt">Me</span></h2>
+            <p style="font-weight: 700; font-size: 30px; color: silver;">About <span class="gradnt">Me</span></p>
             
             <p class="paraabout">
                 I’m Karthik, an ECE student with a strong interest in web development. I’m currently focused on improving my frontend skills and building a solid foundation in modern web technologies.
@@ -102,71 +102,254 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills js-skills slide-up ">
-        <h2 class="abouthed fadeup">Skills</h2>
+        <p class="abouthed fadeup"> Skills </p>
+        <p style="font-size: 18px; color: #ccc; align-self:flex-start; "> Technologies and Tools I work with </p>
 
         <div class="skill-container ">
-            <div class="skill-box js-skill-card"><p>Frontend</p>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS(flexbox, grid )</li>
-                    <li>JavaScript (DOM Manipulation, Event Handling, Basic Logic Building)</li>
-                </ul>
+
+            <div class="skill-card " data-pct="80" data-fill="fill-expert" >
+                <div class="skill-top">
+                    <i class="ti ti-brand-react skill-icon" aria-hidden="true"></i>
+                    <span class="skill-level level-expert">advanced</span>
+                </div>
+                <p class="skill-name">HTML</p>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill fill-expert" ></div>
+                </div>
+                <p class="skill-pct">80%</p>
+            </div>
+            
+            <div class="skill-card " data-pct="70" data-fill="fill-expert" style="animation-delay:0ms">
+                <div class="skill-top">
+                    <i class="ti ti-brand-react skill-icon" aria-hidden="true"></i>
+                    <span class="skill-level level-expert">Intermediate</span>
+                </div>
+                <p class="skill-name">CSS / Tailwind CSS</p>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill fill-expert" ></div>
+                </div>
+                <p class="skill-pct">70%</p>
             </div>
 
-            <div class="skill-box js-skill-card"><p>backend </p>
-                <ul>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                </ul>
+            <div class="skill-card " data-pct="75" data-fill="fill-expert" style="animation-delay:0ms">
+                <div class="skill-top">
+                    <i class="ti ti-brand-react skill-icon" aria-hidden="true"></i>
+                    <span class="skill-level level-expert">Intermediate</span>
+                </div>
+                <p class="skill-name">JavaScript</p>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill fill-expert" ></div>
+                </div>
+                <p class="skill-pct">75%</p>
             </div>
-            
-            <div class="skill-box js-skill-card"><p>Tools</p>
-                <ul>
-                    <li>Git and GitHub</li>
-                    <li>VS code</li>
-                    <li>Microsoft Excel</li>
-                </ul>
+
+            <div class="skill-card " data-pct="60" data-fill="fill-expert" style="animation-delay:0ms">
+                <div class="skill-top">
+                    <i class="ti ti-brand-react skill-icon" aria-hidden="true"></i>
+                    <span class="skill-level level-expert">Intermediate</span>
+                </div>
+                <p class="skill-name">Python</p>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill fill-expert" ></div>
+                </div>
+                <p class="skill-pct">60%</p>
             </div>
-            
+
+            <div class="skill-card " data-pct="30" data-fill="fill-expert" style="animation-delay:0ms">
+                <div class="skill-top">
+                    <i class="ti ti-brand-react skill-icon" aria-hidden="true"></i>
+                    <span class="skill-level level-expert">Basic</span>
+                </div>
+                <p class="skill-name">Git</p>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill fill-expert" style="width: 30%;"></div>
+                </div>
+                <p class="skill-pct">30%</p>
+            </div>
+
+            <div class="skill-card " data-pct="30" data-fill="fill-expert" style="animation-delay:0ms">
+                <div class="skill-top">
+                    <i class="ti ti-brand-react skill-icon" aria-hidden="true"></i>
+                    <span class="skill-level level-expert">Basic</span>
+                </div>
+                <p class="skill-name">Excel / Word</p>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill fill-expert" ></div>
+                </div>
+                <p class="skill-pct">30%</p>
+            </div>
+
+            <div class="skill-card " data-pct="20" data-fill="fill-expert" style="animation-delay:0ms">
+                <div class="skill-top">
+                    <i class="ti ti-brand-react skill-icon" aria-hidden="true"></i>
+                    <span class="skill-level level-expert">Basic</span>
+                </div>
+                <p class="skill-name">React.js</p>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill fill-expert" ></div>
+                </div>
+                <p class="skill-pct">20%</p>
+            </div>
         </div>
     </section>
 
 
     <!-- Projects Section -->
     <section id="projects" class="projects js-projects slide-up ">
-        <h2 class="abouthed ">Projects</h2>
+        <p class="abouthed ">Things I've Built</p>
         <div class="project-container ">
-            <div class="project-card ">
-                <p>Frontend projects</p>
-                <ul>
-                    <li>Todo App</li>
-                    <li>amazon and youtube clone</li>
-                    <li>rock paper scissors game </li>
-                </ul>
-                <a  class="projectbtn js-github">View on GitHub</a>
-            </div>
-
-            <div class="project-card ">
-                <p>Portfolio Website</p>
-                <ul>
-                    <li>This portfolio website was also developed using HTML, CSS, and JavaScript.</li>
-                </ul>
-            </div>
-
-            <div class="project-card">
-                <p>AI-Driven Health Monitoring System</p>
-                <ul>
-                    <li>Dashboard for ECG/BP monitoring with AI-based fall detection.</li>
-                </ul>
+            <!-- Project Card 1 -->
+            <div class="project-card featured">
+                <div class="card-top">
+                    <div class="card-icon" style="background:#EEEDFE; color:#534AB7;">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <a href="https://github.com/Karthikg08?tab=repositories" class="card-link" aria-label="View on GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <div>
+                    <p class="card-title">Frontend Projects</p>
+                    <span class="card-badge">Personal</span>
+                </div>
+                <div class="card-points" style="max-height: 150px; overflow-y: auto;">
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span><span style="font-weight: bold;">Rock paper scissors game:</span> Implemented game logic, score tracking, and random computer moves.</span>
+                        <a href="https://rockpaperscissor1-wheat.vercel.app/" class="point-link" aria-label="Live" target="_blank">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span><span style="font-weight: bold;">To-Do List App:</span> Implemented add, delete, and task management functionalities</span>
+                        <a href="https://todo-list-l2wqmvwx4-karthikg08s-projects.vercel.app/" class="point-link" aria-label="Live" target="_blank">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span><span style="font-weight: bold;">Amazon Clone:</span> Implemented shopping cart functionality with dynamic product price calculation.</span>
+                       
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span><span style="font-weight: bold;">Youtube Clone:</span> Designed video grid layouts, sidebar navigation, and header components.</span>
+                    </div>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">game</span>
+                    <span class="tag">task management</span>
+                </div>
                 
             </div>
-
-            <div class="project-card ">
-                <p>IoT Smart Car Parking System</p>
-                <ul>
-                    <li>Real-time parking slot monitoring using IR sensors.</li>
-                </ul>
+            <!-- Project Card 2 -->
+           <div class="project-card featured">
+                <div class="card-top">
+                    <div class="card-icon" style="background:#EEEDFE; color:#534AB7;">
+                        <i class=" fa-regular fa-circle-user "></i>
+                    </div>
+                    
+                </div>
+                <div>
+                    <p class="card-title">Portfolio Website</p>
+                    <span class="card-badge">Personal</span>
+                </div>
+                <div class="card-points">
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span>Developed a responsive personal portfolio website using HTML, CSS, and JavaScript.</span>
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span>Showcased projects, technical skills, and contact information with a modern UI design.</span>
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span>Showcased projects, technical skills, and contact information with a modern UI design.</span>
+                    </div>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">responsive UI</span>
+                    
+                </div>
+                
             </div>
+            <!-- Project Card 3 -->
+            <div class="project-card featured">
+                <div class="card-top">
+                    <div class="card-icon" style="background:#EEEDFE; color:#534AB7;">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    
+                </div>
+                <div>
+                    <p class="card-title">AI Portable Health Monitoring System</p>
+                    <span class="card-badge">Academic</span>
+                </div>
+                <div class="card-points">
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span>Real-time patient monitoring with emergency alert support for improved safety.</span>
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span>Integrated ECG, heart rate, blood pressure, SpO₂, temperature, and accident detection sensors.</span>
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#534AB7;"></span>
+                        <span>Enabled remote doctor monitoring with AI-based health assessment via IoT data transmission.</span>
+                    </div>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">ESP8266</span>
+                    <span class="tag">Arduino Nano</span>
+                    <span class="tag">PIC Controller</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">AI</span>
+                </div>
+                
+            </div>
+            <!-- Project Card 4 -->
+            <div class="project-card featured">
+                <div class="card-top">
+                    <div class="card-icon" style="background:#E1F5EE; color:#0F6E56;">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    
+                </div>
+                <div>
+                    <p class="card-title">IoT Smart Car Parking System</p>
+                    <span class="card-badge">Academic</span>
+                </div>
+                <div class="card-points">
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#0F6E56;"></span>
+                        <span>IR sensor-based vehicle detection to identify occupied and available parking slots in real time.</span>
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#0F6E56;"></span>
+                        <span>Live dashboard showing parking slot status and vehicle count at a glance.</span>
+                    </div>
+                    <div class="card-point">
+                        <span class="point-dot" style="background:#0F6E56;"></span>
+                        <span>Automated monitoring reduced manual overhead and improved parking efficiency.</span>
+                    </div>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Arduino</span>
+                    <span class="tag">IR Sensors</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">Dashboard</span>
+                </div>
+            </div>
+
         </div>
 
     </section>
@@ -175,30 +358,30 @@
       <section id="contact" class=" contact js-contact slide-up ">
         <!-- Left Section -->
         <div class="contact-left imgReveal">
-            <h2 >Get In Touch</h2>
+            <span class="abouthed">Get In Touch</span>
             <p>Have a project in mind or want to collaborate? I'd love to hear from you. Send me a message and I'll get back to you as soon as possible.</p>
  
             <div class="contact-info-group">
                 <div class="contact-info-item">
-                    <div class="contact-info-icon">✉️</div>
+                    <div class="contact-info-icon"><i class="fa-solid fa-envelope" style=" color:#f6ffa9" ></i></div>
                     <div>
-                        <h3>Email Address</h3>
+                        <h3 style="color:#e9fcb6">Email Address</h3>
                         <p>karthikig07@gmail.com</p>
                     </div>
                 </div>
  
                 <div class="contact-info-item">
-                    <div class="contact-info-icon">📱</div>
+                    <div class="contact-info-icon"><i class="fa-solid fa-phone" style=" color:#f6ffa9" ></i></div>
                     <div>
-                        <h3>Phone Number</h3>
+                        <h3 style="color:#e9fcb6">Phone Number</h3>
                         <p>+91 90256 51165</p>
                     </div>
                 </div>
  
                 <div class="contact-info-item">
-                    <div class="contact-info-icon">📍</div>
+                    <div class="contact-info-icon" ><i class="fa-solid fa-location-dot" style=" color:#f6ffa9"></i></i></div>
                     <div>
-                        <h3>Location</h3>
+                        <h3 style="color:#e9fcb6">Location</h3>
                         <p>Chennai, Tamilnadu</p>
                     </div>
                 </div>
@@ -206,49 +389,43 @@
  
             <div class="contact-socials">
                 <a  href="https://www.linkedin.com/in/karthikg12/" target="_blank" class="social-icon js-linkedin" title="LinkedIn">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
-                    </svg>
+                    <i class="fab fa-linkedin js-linkedin" style=" color:#4da4eb; font-size:24px; " ></i>
                 </a>
                 <a  href="https://github.com/karthikg08" target="_blank" class="social-icon js-github" title="GitHub">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
+                    <i class="fab fa-github js-github" style=" color:#4da4eb; font-size:24px; " ></i>
                 </a>
                 <a  href="https://instagram.com/i.kxrthik" target="_blank" class="social-icon js-instagram" title="Instagram">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 110-2.881 1.44 1.44 0 010 2.881z"/>
-                    </svg>
+                    <i class="fab fa-instagram js-instagram" style=" color:#4da4eb; font-size:24px; " ></i>
                 </a>
             </div>
         </div>
  
         <!-- Right Section -->
         <div class="contact-right">
-            <h2>Send Me a Message</h2>
-            <p>Fill out the form below and I'll respond to you within 24 hours.</p>
+            <span class="abouthed">Send Me a Message</span>
+            <p style="color: #ccc;">Fill out the form below and I'll respond to you within 24 hours.</p>
  
             <div class="form-message" id="formMessage"></div>
  
             <form id="contactForm" onsubmit="handleSubmit(event)">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
+                        <label for="name" style="color:#e9fcb6">Full Name</label>
                         <input type="text" id="name" name="name" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email" style="color:#e9fcb6">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="john@gmail.com" required>
                     </div>
                 </div>
  
                 <div class="form-group">
-                    <label for="subject">Subject</label>
+                    <label for="subject" style="color:#e9fcb6">Subject</label>
                     <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
                 </div>
  
                 <div class="form-group">
-                    <label for="message">Message</label>
+                    <label for="message" style="color:#e9fcb6">Message</label>
                     <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
                 </div>
  
