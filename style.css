@@ -362,7 +362,7 @@ section {
     border: 2px solid rgba(255, 251, 195, 0.938);
     transition: transform 0.3s ease-in-out;   
     text-decoration: none; 
-    padding:0px ; 
+    
     background-color: transparent;
     color: rgb(253, 252, 185);
     border-radius: 50%;

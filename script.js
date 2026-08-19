@@ -3,7 +3,7 @@
 const phrases = [
      "Front-End Developer.",
      "Creative Thinker.",
-        "Problem Solver.",
+     "Problem Solver.",
     ];
 
     let phraseIndex = 0;
@@ -15,7 +15,7 @@ const phrases = [
 
       if (!deleting) {
         charIndex++;
-        document.getElementById('output').textContent = current.slice(0, charIndex);
+        document.getElementById('output').textContent = current.slice(0, charIndex);    
 
         if (charIndex === current.length) {
           deleting = true;
