@@ -5,8 +5,8 @@
 }
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background:linear-gradient(90deg, #00121d, #005766);
-    background-color: #000000;
+    
+    background-color: #1a1818;
     
     min-height: 100vh;
    
@@ -263,9 +263,9 @@ section {
 
 /* home section */
 .home{
-    background-image: url("bg-imgs/home-img.png");
+    background-image: url("bg-imgs/home-svg.svg");
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -286,10 +286,8 @@ section {
     border: none;
      object-fit: cover;
     object-position: center;
-    width: 100%;
-    padding: 10px;
-    max-width: 350px;
-    height: 350px;
+    width: min(80vw, 300px);
+    height: min(80vw, 300px);
     padding: 5px;
     background: linear-gradient(90deg, #291b0d, #d3d0a2,#d3d0a2, #291b0d);
     aspect-ratio: 1 / 1;
@@ -305,21 +303,22 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    gap: 10px;
-    padding: 20px;
+    align-items: flex-start;
+    gap: 5px;
+    
 }
 .mynameup{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: whitesmoke;
-    font-size: 1.2rem;
-    font-weight:600;
+    font-size: 1.5rem;
+    font-weight:500;
 }
 .myname{
     background: linear-gradient(90deg, #eaff74, #dbdbc7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 500;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -342,15 +341,15 @@ section {
 
 
 
-.butns {
-    padding: 10px 0px;
-    
-}
+
 
 
 .lshome{
-    align-self: flex-start;
-    zoom: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    
 }
 .frtendnm{
     color:rgb(0, 255, 115);
@@ -358,9 +357,12 @@ section {
 }
 .logo{
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    width: 240px;
     align-items: center;
     gap: 20px;
+    padding: 10px 0;
+    
     
 
 }
@@ -382,12 +384,19 @@ section {
 .logo a:hover {
     cursor: pointer;
     color: rgb(255, 255, 255);
-    background-color: rgba(98, 120, 219, 0.699);
+    
     transform: scale(1.2) translateZ(50px) ;
     box-shadow: 0 5px 20px rgb(30, 30, 31);
 }
 
-.btn{
+.butns {
+    
+   display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    
+}
+.res-btn{
     padding: 8px 15px;
     text-decoration: none;
     border: 1px solid rgba(255, 251, 195, 0.938);
@@ -399,28 +408,36 @@ section {
     font-weight: 600;
     display: inline-block;
     transition: all 0.1s ease-in-out;
-    
-    
    
-    
-   
-    
-    
 }
-.btn:hover {
+
+.res-btn:hover,.pjt-btn:hover {
     border: 1px solid rgba(255, 251, 195, 0.938);
     
 
     transform: translateZ(30px) scale(1.06);
 }
-
+.pjt-btn{
+    padding: 8px 15px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 251, 195, 0.938);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.1s ease-in-out;
+    
+}
 
 
 /* about section */
 
 /*.about is combine with .home*/
 .about {
-    background-image: url("bg-imgs/about-img.png");
+    background-image: url("bg-imgs/about-svg.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -465,7 +482,7 @@ section {
 
 /*skill sec */
 .skills{
-    background-image: url("bg-imgs/skill-img.png");
+    background-image: url("bg-imgs/skill.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -555,7 +572,7 @@ section {
 
 /* project section */
 .projects{
-    background-image: url("bg-imgs/project-img.png");
+    background-image: url("bg-imgs/prjt.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -744,7 +761,7 @@ section {
 
 
 .contact {
-    background-color: var(--bg-contact);
+    background-image: url("bg-imgs/cont-svg.svg");
     border-radius: 0;
     min-height: calc(100dvh - 70px);
     display: flex;
@@ -999,9 +1016,7 @@ nav a{
     padding: 20px;
    
 }
-.myname {
-    font-size: 3.5rem;
-}
+
 
 
 
@@ -1058,13 +1073,8 @@ nav a{
     .home1, .aboutimg{
         padding: 20px;
     }
-    .myname {
-        font-size: 2.5rem;
-    }
-    .profile{
-        max-width: 350px;
-        max-height: 350px;
-    }
+   
+    
    
     
 }
@@ -1083,14 +1093,8 @@ tablet breakpoint (768px)*/
     .home1 {
         padding: 20px;
     }
-    .myname {
-        font-size: 2rem;
-    }
-    .profile{
-        max-width: 250px;
-        max-height: 250px;
-        
-    }
+    
+    
     .abouthed{
         padding-top: 0px;
         
@@ -1210,16 +1214,12 @@ tablet breakpoint (768px)*/
         align-items: center;
         padding: 20px 10px;
     }
-    .myname {
-        font-size: 1.5rem;
-    }
-    .profile {
-        max-width: 250px;
-    }
+    
+    
     .textside{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     align-items: center;
     gap: 10px;
 }
