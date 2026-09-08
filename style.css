@@ -25,17 +25,13 @@ section {
 .home, .about, .skills, .projects, .contact {
     width: 100%;
     overflow: hidden;
+    min-height: calc(100dvh - 70px);
+    min-height: calc(100dvh - 70px);
+    padding: clamp(25px, 5vw, 80px);
 }
 
 :root{
     
-    --bg-home: linear-gradient(90deg, #cec5c5, #696661);
-    
-    --bg-about: yellow;
-    --bg-skills: transparent;
-    
-    --bg-project: transparent;
-    --bg-contact: transparent;
     /*skill section */
     --bg-skill-card: #010b29;
     --radius-lg: 8px;
@@ -112,10 +108,11 @@ section {
     transform: translateX(150%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
+    will-change: transform;
     
 }
 .sidebar.active {
-     transform: translateX(100%);
+     transform: translateX(0%);
 }
 
 .sba::before {
@@ -132,8 +129,6 @@ section {
 }
 .sba {
     display: block;
-    padding: 16px 20px;
-    color: #e0e0e0;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
@@ -142,11 +137,11 @@ section {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    text-decoration: none;
     color: rgb(255, 255, 255);
     margin-left: 20px;
-    font-size: 18px;
-    font-weight: 600;
+    width: 100%;
+    padding: 1rem 1rem ;
+    
 }
 
 .sba:hover {
@@ -158,16 +153,11 @@ section {
 .sba:hover::before {
     transform: scaleY(1);
 }
-.sidebar a {
-    width: 100%;
-    padding: 1rem 1rem ;
-}
+
 
 .menu-toggle {
     display: none;
     position: relative;
-
-
     border: none;
     width: 40px;
     height: 40px;
@@ -277,7 +267,9 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-home1);
+    width: min(100%, 450px);
+    height: auto;
+    
     
 }
 
@@ -443,15 +435,10 @@ section {
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    min-height: calc(100dvh - 70px);;
+    min-height: calc(100dvh - 70px);
     gap: 10px;
 }
-.aboutimg{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 .abouttext{
     display: flex;
     flex-direction: column;
@@ -459,22 +446,12 @@ section {
     align-items: flex-start;
     
 }
-.gradnt{
-    background: rgb(87, 74, 74);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-    
 
 .abouthed{
     align-self: flex-start;
-    
     font-size: 35px;
     color: rgb(252, 255, 212);
-    background-clip: text;
-
+    
 }
 .paraabout{
     color: rgb(19, 18, 18);
@@ -490,7 +467,7 @@ section {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    min-height: calc(100dvh - 70px);;
+    min-height: calc(100dvh - 70px);
     gap: 1px;
     padding: 2rem;
     overflow: hidden;
@@ -531,7 +508,7 @@ section {
       justify-content: space-between;
       margin-bottom: 10px;
     }
-    .skill-icon { font-size: 20px; color: var(--text-secondary); }
+    .skill-icon { font-size: 20px;  }
  
     .skill-level {
       font-size: 11px;
@@ -540,13 +517,10 @@ section {
       font-weight: 500;
     }
     .level-expert      { background: #E1F5EE; color: #085041; }
-    .level-advanced    { background: #E6F1FB; color: #0C447C; }
-    .level-intermediate { background: #FAEEDA; color: #633806; }
- 
+   
     .skill-name {
       font-size: 14px;
       font-weight: 500;
-      color: var(--text-primary);
       margin-bottom: 8px;
     }
  
@@ -567,7 +541,7 @@ section {
     .fill-advanced    { background: #378ADD; }
     .fill-intermediate { background: #EF9F27; }
  
-    .skill-pct { font-size: 11px; color: var(--text-tertiary); text-align: right; }
+    .skill-pct { font-size: 11px;  text-align: right; }
 
 
 /* project section */
@@ -580,7 +554,7 @@ section {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    min-height: calc(100dvh - 70px);;
+    min-height: calc(100dvh - 70px);
     padding: 2rem;
     overflow: hidden;
     
@@ -653,6 +627,8 @@ section {
 .card-points {
     display: flex;
     flex-direction: column;
+    max-height: 150px; 
+    overflow-y: auto;
     gap: 8px;
     flex: 1;
 }
@@ -767,15 +743,15 @@ section {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    padding: 0;
     overflow: hidden;
+    gap: clamp(20px, 4vw, 80px);
 }
 
 /* Left Side - Contact Info */
 .contact-left {
     flex: 1;
     border-radius: 0;
-    padding: 60px 50px;
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -868,7 +844,7 @@ section {
 /* Right Side - Contact Form */
 .contact-right {
     flex: 1;
-    padding: 60px 50px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -985,10 +961,7 @@ section {
 @media (min-width: 2560px) {
     body{
     font-family: Arial, Helvetica, sans-serif;
-    
-    background-color: var(--bg-body); 
-    min-height: calc(100dvh - 70px);
-
+    min-height: calc(100dvh - 100px);
     color: rgb(255, 248, 248);
     padding-top: 100px;
 
@@ -1000,7 +973,7 @@ min-height: 100px;
 font-size: 40px;
 
 }
-.resbtn{
+.res-btn{
     font-size: 30px;
 }
 nav a{
@@ -1008,7 +981,7 @@ nav a{
 }
 .home {
     grid-template-columns: repeat(2, 1fr);
-    min-height: calc(100dvh - 70px);
+    min-height: calc(100dvh - 100px);
     width: 100%;
     zoom: 1.5;
 }
@@ -1022,15 +995,16 @@ nav a{
 
 .about {
     grid-template-columns: repeat(2, 1fr);
-    min-height: calc(100dvh - 70px);;
+    min-height: calc(100dvh - 100px);
     zoom: 1.5;
     width: 100%;
-    padding: 20px;
+    
 }
 .aboutimg{
     display: flex;
     justify-content: center;
     align-items: center;
+    
     
     
 }
@@ -1040,8 +1014,8 @@ nav a{
     
 }
 .skills, .projects {
-    min-height: calc(100dvh - 70px);;
-    padding-top: 70px;
+    min-height: calc(100dvh - 100px);
+    
 }
 .abouthed{
     font-size: 40px;
@@ -1054,9 +1028,9 @@ nav a{
     zoom: 1.8;
 }
 .contact{
-    min-height: calc(100dvh - 70px);;
+    min-height: calc(100dvh - 100px);
     zoom: 1.9;
-    padding: 0;
+    
 }
 .footer{
     zoom: 1.5;
@@ -1086,7 +1060,7 @@ tablet breakpoint (768px)*/
 @media (max-width: 768px) {
     .home, .about {
         grid-template-columns: 1fr 1fr;
-        min-height: calc(100dvh - 70px);;
+        min-height: calc(100dvh - 70px);
         width: 100%;
     }
    
@@ -1109,7 +1083,7 @@ tablet breakpoint (768px)*/
     }
     .contact-left, .contact-right {
         
-        padding: 30px 20px;
+        
         width: 100%;
     }
     .contact-socials {
@@ -1146,8 +1120,8 @@ tablet breakpoint (768px)*/
 
     /* project section */
     .projects, .skills {
-        padding: 30px 20px;
-         min-height: calc(100dvh - 70px);;
+        
+         min-height: calc(100dvh - 70px);
     }
  
     .project-container {
@@ -1171,7 +1145,7 @@ tablet breakpoint (768px)*/
     .skill-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
-        padding: 1.5rem;
+        
         max-width: 900px;
         height: auto;
     }
@@ -1205,7 +1179,7 @@ tablet breakpoint (768px)*/
     .home {
         grid-template-columns:  1fr;    
         min-height: calc(100dvh - 70px);
-        padding: 20px;
+        
     }
     .home1 {
         display: flex;
@@ -1230,11 +1204,11 @@ tablet breakpoint (768px)*/
     align-content: center;
    
     min-height: calc(100dvh - 70px);
-    padding: 20px;
+    
 }
 
 .skill-container, .project-container {
-    padding: 10px;
+    
 }
 .project-container {
     grid-template-columns: 1fr; 
