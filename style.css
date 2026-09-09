@@ -26,8 +26,7 @@ section {
     width: 100%;
     overflow: hidden;
     min-height: calc(100dvh - 70px);
-    min-height: calc(100dvh - 70px);
-    padding: clamp(25px, 5vw, 80px);
+    
 }
 
 :root{
@@ -267,7 +266,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: min(100%, 450px);
+   
     height: auto;
     
     
@@ -276,10 +275,10 @@ section {
 .profile{
     border-radius: 50%;
     border: none;
-     object-fit: cover;
+    object-fit: cover;
     object-position: center;
-    width: min(80vw, 300px);
-    height: min(80vw, 300px);
+   width: min(80vw, 250px);
+    height: min(80vw, 250px); 
     padding: 5px;
     background: linear-gradient(90deg, #291b0d, #d3d0a2,#d3d0a2, #291b0d);
     aspect-ratio: 1 / 1;
@@ -297,6 +296,7 @@ section {
     justify-content: center;
     align-items: flex-start;
     gap: 5px;
+    padding: 20px;
     
 }
 .mynameup{
@@ -444,7 +444,11 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding: 20px;
     
+}
+.abt-name{
+    font-weight: 700; font-size: 30px; color: rgb(87, 74, 74);
 }
 
 .abouthed{
@@ -471,6 +475,11 @@ section {
     gap: 1px;
     padding: 2rem;
     overflow: hidden;
+}
+.sub-skill{
+    font-size: 18px;
+    color: #ccc;
+    align-self:flex-start; 
 }
 .skill-container{
   display: grid;
@@ -744,7 +753,8 @@ section {
     flex-direction: row;
     align-items: stretch;
     overflow: hidden;
-    gap: clamp(20px, 4vw, 80px);
+    gap: 20px;
+    padding: 2rem;
 }
 
 /* Left Side - Contact Info */
@@ -963,79 +973,151 @@ section {
     font-family: Arial, Helvetica, sans-serif;
     min-height: calc(100dvh - 100px);
     color: rgb(255, 248, 248);
-    padding-top: 100px;
+    padding-top: 120px;
 
 } 
 .header{
-min-height: 100px;
+min-height: 120px;
 }
 .header-title{
-font-size: 40px;
+    font-size: clamp(2rem, 2vw, 2.5rem);
 
 }
-.res-btn{
-    font-size: 30px;
+.mynameup,.myname{
+    font-size: clamp(3rem, 2vw, 3.5rem);
 }
-nav a{
-    font-size: 24px;
+.mynamedown{
+    margin-top: 20px;
+    font-size: clamp(2rem, 2vw, 2.5rem);
+}
+.profile{
+    width: min(50vw, 400px);
+    height: min(50vw, 400px);
+}
+.res-btn,.pjt-btn{
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+}
+.abt-name{
+    font-size: clamp(2.5rem, 2vw, 3.5rem);
+}
+.paraabout{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.textside{
+    gap: 20px;
+}
+.navtext{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.logo a {
+    min-width: clamp(40px, 5vw, 70px);
+    min-height: clamp(40px, 5vw, 70px);
+    font-size: clamp(2rem, 2vw, 2.5rem);
+
+}
+.logo{
+    min-width: 500px;
+    gap: 30px;
+    
 }
 .home {
     grid-template-columns: repeat(2, 1fr);
     min-height: calc(100dvh - 100px);
     width: 100%;
-    zoom: 1.5;
+    
 }
 .home1 {
     padding: 20px;
    
 }
 
-
-
-
 .about {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     min-height: calc(100dvh - 100px);
-    zoom: 1.5;
+    gap: 30px;
     width: 100%;
     
 }
 .aboutimg{
-    display: flex;
+     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+   
     
     
 }
 .abouttext{
     padding: 10px;
-    font-size: 20px;
-    
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 .skills, .projects {
     min-height: calc(100dvh - 100px);
     
 }
 .abouthed{
-    font-size: 40px;
+    font-size: clamp(3rem, 2vw, 4rem);
 }
 .skill-container{
-    zoom: 1.7;
-}
-
-.project-container{
-    zoom: 1.8;
-}
-.contact{
-    min-height: calc(100dvh - 100px);
-    zoom: 1.9;
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr)) ;
+    
+    gap: 2rem;
+    padding-top: 1.5rem;
+    margin: 0 auto;
+    width: 100%;
     
 }
-.footer{
-    zoom: 1.5;
+.skill-level,.skill-name,.skill-pct{
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
+
+.skill-top{
+    gap: 10px;
+}
+.skill-card{
+    
+    min-height: 150px;
+    min-width: 200px;
+}
+.sub-skill{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.project-container{
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) ;
+    
+    gap: 2rem;
+    padding-top: 1.5rem;
+    margin: 0 auto;
+    width: 100%;
+    
+}
+.card-points{
+    max-height: 500px; 
+    overflow-y: auto;
+}
+.project-card{
+    min-height: 600px;
+    min-width: 300px;
+}
+
+.card-title,.card-badge,.card-point,.card-tags,.card-icon,.card-link,.tag{
+    font-size: clamp(1rem, 2vw, 1.6rem);
+}
+
+.contact{
+    min-height: calc(100dvh - 100px);
+    
+    
+}
+.form-group label,.form-group input, .form-group textarea, .submit-btn, .contact-info-item h3, .contact-info-item p,.contact-left p,.contact-right > p{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+}
+.footer{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
 }
 
 /* laptop breakpoint (768px - 1440px)*/
@@ -1207,9 +1289,6 @@ tablet breakpoint (768px)*/
     
 }
 
-.skill-container, .project-container {
-    
-}
 .project-container {
     grid-template-columns: 1fr; 
 
@@ -1228,8 +1307,6 @@ tablet breakpoint (768px)*/
     box-shadow: none;
   }
 }
-
-
 /*footer*/
 .footer {
 background-color: #3f4f6b;
