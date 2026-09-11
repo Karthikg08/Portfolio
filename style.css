@@ -5,7 +5,7 @@
 }
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    
+    overscroll-behavior-y: contain;
     background-color: #1a1818;
     
     min-height: 100vh;
@@ -16,8 +16,9 @@ body{
     padding-top: 70px;
 }  
 html {
-    scroll-behavior: auto;
-    scroll-snap-type: none;
+    scroll-behavior: smooth;
+     overflow-anchor: none;
+    
 }
 section {
     overflow-x: hidden;
@@ -26,6 +27,7 @@ section {
 .home, .about, .skills, .projects, .contact {
     width: 100%;
     overflow: hidden;
+    min-height: calc(100vh - 70px);
     min-height: calc(100dvh - 70px);
     
     
@@ -58,7 +60,6 @@ section {
 
 /* header */
 .header{
-    
     position: fixed;
     top: 0;
     left: 0;
@@ -67,12 +68,9 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
     height: 70px;
     padding: 0 20px;
-
     background-color: rgb(20, 20, 20);
-    
     color: whitesmoke;
     box-shadow: 0 5px 50px rgba(51, 50, 50, 0.959);
     
