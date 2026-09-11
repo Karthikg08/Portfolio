@@ -26,7 +26,8 @@ section {
     width: 100%;
     overflow: hidden;
     min-height: calc(100dvh - 70px);
-    height: auto;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
     
 }
 
