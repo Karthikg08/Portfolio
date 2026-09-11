@@ -16,7 +16,8 @@ body{
     padding-top: 70px;
 }  
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
 }
 section {
     overflow-x: hidden;
@@ -26,8 +27,7 @@ section {
     width: 100%;
     overflow: hidden;
     min-height: calc(100dvh - 70px);
-    scroll-behavior: auto;
-    scroll-snap-type: none;
+    
     
 }
 
