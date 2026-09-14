@@ -250,10 +250,12 @@ function showMessage(text, type) {
 
         //Close menu when scrolling 
         document.addEventListener('scroll', () => {
-            menuToggle.classList.remove('active');
-            nav.classList.remove('active');
-            navOverlay.classList.remove('active');
-        });
+            if (nav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                navOverlay.classList.remove('active');
+            }
+        }, { passive: true });
 
         // Close menu on ESC key
         document.addEventListener('keydown', (e) => {
