@@ -509,7 +509,7 @@ section {
      ========================================================================== */
   .hero {
     position: relative;
-    min-height: calc(100dvh - 70px);
+    
     overflow: hidden;               /* clips shapes that drift past the edges */
     background: linear-gradient(135deg, var(--hero-bg-start), var(--hero-bg-mid), var(--hero-bg-end));
     perspective: 1200px;            /* gives child 3D transforms real depth   */
@@ -789,7 +789,7 @@ section {
     border: 2px solid #503427;
 }
 .project-card {
-    background: #fcddddd5;
+    background: #fffffff3;
     
     border-radius: 8px;
     padding: 1.25rem;
