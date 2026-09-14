@@ -6,26 +6,20 @@
 body{
     font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     overscroll-behavior-y: contain;
-     margin: 0;
-  background: linear-gradient(
-    var(--gradient-angle),
-    var(--bg-color-1) 0%,
-    var(--bg-color-2) 50%,
-    var(--bg-color-3) 100%
-  );
-    /* gradient stays put while content scrolls */
-  color: #e6e6ea;                 /* soft off-white — avoids harsh contrast against the dark bg */
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    
-    height: 100%;
-   
-    overflow-x: hidden;
-
+    margin: 0;
     color: rgb(248, 255, 255);
+    background: linear-gradient(
+        var(--gradient-angle),
+        var(--bg-color-1) 0%,
+        var(--bg-color-2) 50%,
+        var(--bg-color-3) 100%
+    );
+    
     
 }  
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
      
     
 }
@@ -37,7 +31,7 @@ section {
     width: 100%;
     overflow: hidden;
     
-    min-height: calc(100dvh - 70px);
+    
     
     
 }
@@ -509,7 +503,7 @@ section {
      ========================================================================== */
   .hero {
     position: relative;
-    
+    min-height: calc(100dvh - 70px);
     overflow: hidden;               /* clips shapes that drift past the edges */
     background: linear-gradient(135deg, var(--hero-bg-start), var(--hero-bg-mid), var(--hero-bg-end));
     perspective: 1200px;            /* gives child 3D transforms real depth   */
@@ -1477,7 +1471,7 @@ tablet breakpoint (768px)*/
     justify-content: center;
     align-content: center;
    
-    min-height: calc(100dvh - 70px);
+    
     
 }
 
