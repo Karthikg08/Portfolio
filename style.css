@@ -17,7 +17,7 @@ body{
   color: #e6e6ea;                 /* soft off-white — avoids harsh contrast against the dark bg */
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     
-    min-height: 100vh;
+    height: 100%;
    
     overflow-x: hidden;
 
