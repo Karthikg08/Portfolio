@@ -22,7 +22,7 @@ body{
     overflow-x: hidden;
 
     color: rgb(248, 255, 255);
-    padding-top: 70px;
+    
 }  
 html {
     scroll-behavior: smooth;
@@ -125,7 +125,7 @@ section {
 
 /* header */
 .header{
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
