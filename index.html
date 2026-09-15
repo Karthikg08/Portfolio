@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="style.css">
-    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLDV9MFHDT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DLDV9MFHDT');
+    </script>
 </head>
 <body>
 
@@ -50,36 +56,43 @@
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="home js-home ">
-        <div class="home1 slide-left">
+    <section id="home" class="home js-home hero">
+        <div class="home1 hero__content slide-left">
             <div class="imgside">
                 <img src="profile-pic.png" alt="image" class="profile">
             </div>
         </div>
-        <div class="textside slide-right">
+        <div class="textside hero__content slide-right">
             <div class="lshome">
-                <p class="mynameup">Hello, It's Me </p>
-                <p class="myname">Karthik G</p>
-                <p class="mynamedown">And I'm a <span class="frtendnm" id="output"> </span><span class="cursor"></span> </p>
+                <p class="mynameup">Hi, I'm <span class="myname">KARTHIK G</span> </p>
+                <p class="mynamedown"> <span class="frtendnm" id="output"> </span><span class="cursor"></span> </p>
             </div>
-            <div class="logo">
-                
-                <a href="https://github.com/karthikg08" target="_blank">
-                    <i class="fab fa-github js-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/karthikg12/" target="_blank">
-                    <i class="fab fa-linkedin js-linkedin"></i>
-                </a>
-                <a href="https://instagram.com/i.kxrthik" target="_blank">
-                    <i class="fab fa-instagram js-instagram"></i>
-                </a>
-                
-            </div>
+
             <div class="butns"> 
-                <a href="karthik_dev.pdf" target="_blank" class="btn"  >Download CV</a>
+                <a href="#contact"  class="res-btn"  >Hire Me</a>
+                <a  href="Resume.pdf" target="_blank" class="pjt-btn"  >Download CV</a>
+            </div>
+
+            <div class="logo">
+                <a class="github-link" target="_blank">
+                    <i class="fab fa-github "></i>
+                </a>
+                <a class="linkedin-link" target="_blank">
+                    <i class="fab fa-linkedin "></i>
+                </a>
+                <a class="instagram-link" target="_blank">
+                    <i class="fab fa-instagram "></i>
+                </a>
             </div>
         </div>
         
+          <canvas class="hero__particles" id="particles"></canvas>
+ 
+            <!-- Floating 3D cubes: pure CSS, zero JS cost per frame -->
+           
+            
+            
+
         
     </section>
 
@@ -89,7 +102,7 @@
             <img src="profile-pic.png" alt="image" class="profile ">
         </div>
         <div class="abouttext slide-up">
-            <p style="font-weight: 700; font-size: 30px; color: silver;">About <span class="gradnt">Me</span></p>
+            <p class="abt-name" >About Me</p>
             
             <p class="paraabout">
                 I’m Karthik, an ECE student with a strong interest in web development. I’m currently focused on improving my frontend skills and building a solid foundation in modern web technologies.
@@ -101,11 +114,11 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills js-skills slide-up ">
+    <section id="skills" class="skills js-skills  ">
         <p class="abouthed fadeup"> Skills </p>
-        <p style="font-size: 18px; color: #ccc; align-self:flex-start; "> Technologies and Tools I work with </p>
+        <p class="sub-skill"> Technologies and Tools I work with </p>
 
-        <div class="skill-container ">
+        <div class="skill-container slide-up">
 
             <div class="skill-card " data-pct="80" data-fill="fill-expert" >
                 <div class="skill-top">
@@ -195,9 +208,9 @@
 
 
     <!-- Projects Section -->
-    <section id="projects" class="projects js-projects slide-up ">
+    <section id="projects" class="projects js-projects  ">
         <p class="abouthed ">Things I've Built</p>
-        <div class="project-container ">
+        <div class="project-container slide-up">
             <!-- Project Card 1 -->
             <div class="project-card featured">
                 <div class="card-top">
@@ -212,7 +225,7 @@
                     <p class="card-title">Frontend Projects</p>
                     <span class="card-badge">Personal</span>
                 </div>
-                <div class="card-points" style="max-height: 150px; overflow-y: auto;">
+                <div class="card-points" >
                     <div class="card-point">
                         <span class="point-dot" style="background:#534AB7;"></span>
                         <span><span style="font-weight: bold;">Rock paper scissors game:</span> Implemented game logic, score tracking, and random computer moves.</span>
@@ -355,15 +368,15 @@
     </section>
 
     <!-- Contact Section -->
-      <section id="contact" class=" contact js-contact slide-up ">
+      <section id="contact" class=" contact js-contact  ">
         <!-- Left Section -->
-        <div class="contact-left imgReveal">
+        <div class="contact-left imgReveal slide-up">
             <span class="abouthed">Get In Touch</span>
             <p>Have a project in mind or want to collaborate? I'd love to hear from you. Send me a message and I'll get back to you as soon as possible.</p>
  
             <div class="contact-info-group">
                 <div class="contact-info-item">
-                    <div class="contact-info-icon"><i class="fa-solid fa-envelope" style=" color:#f6ffa9" ></i></div>
+                    <div class="contact-info-icon"><i class="fa-solid fa-envelope" style=" color:#003cff" ></i></div>
                     <div>
                         <h3 style="color:#e9fcb6">Email Address</h3>
                         <p>karthikig07@gmail.com</p>
@@ -371,7 +384,7 @@
                 </div>
  
                 <div class="contact-info-item">
-                    <div class="contact-info-icon"><i class="fa-solid fa-phone" style=" color:#f6ffa9" ></i></div>
+                    <div class="contact-info-icon"><i class="fa-solid fa-phone" style=" color:#003cff" ></i></div>
                     <div>
                         <h3 style="color:#e9fcb6">Phone Number</h3>
                         <p>+91 90256 51165</p>
@@ -379,7 +392,7 @@
                 </div>
  
                 <div class="contact-info-item">
-                    <div class="contact-info-icon" ><i class="fa-solid fa-location-dot" style=" color:#f6ffa9"></i></i></div>
+                    <div class="contact-info-icon" ><i class="fa-solid fa-location-dot" style=" color:#003cff"></i></i></div>
                     <div>
                         <h3 style="color:#e9fcb6">Location</h3>
                         <p>Chennai, Tamilnadu</p>
@@ -388,20 +401,20 @@
             </div>
  
             <div class="contact-socials">
-                <a  href="https://www.linkedin.com/in/karthikg12/" target="_blank" class="social-icon js-linkedin" title="LinkedIn">
-                    <i class="fab fa-linkedin js-linkedin" style=" color:#4da4eb; font-size:24px; " ></i>
+                <a    target="_blank" class="social-icon linkedin-link" title="LinkedIn">
+                    <i class="fab fa-linkedin " style=" color: #f0f0f0c9;; font-size:24px; " ></i>
                 </a>
-                <a  href="https://github.com/karthikg08" target="_blank" class="social-icon js-github" title="GitHub">
-                    <i class="fab fa-github js-github" style=" color:#4da4eb; font-size:24px; " ></i>
+                <a   target="_blank" class="social-icon github-link" title="GitHub">
+                    <i class="fab fa-github " style=" color:#f0f0f0c9; font-size:24px; " ></i>
                 </a>
-                <a  href="https://instagram.com/i.kxrthik" target="_blank" class="social-icon js-instagram" title="Instagram">
-                    <i class="fab fa-instagram js-instagram" style=" color:#4da4eb; font-size:24px; " ></i>
+                <a   target="_blank" class="social-icon instagram-link" title="Instagram">
+                    <i class="fab fa-instagram " style=" color:#f0f0f0c9; font-size:24px; " ></i>
                 </a>
             </div>
         </div>
  
         <!-- Right Section -->
-        <div class="contact-right">
+        <div class="contact-right  slide-up">
             <span class="abouthed">Send Me a Message</span>
             <p style="color: #ccc;">Fill out the form below and I'll respond to you within 24 hours.</p>
  

@@ -1,9 +1,20 @@
+// social links
 
+const links = {
+  github: "https://github.com/Karthikg08/",
+  linkedin: "https://www.linkedin.com/in/karthikg12/",
+  instagram: "https://www.instagram.com/kxrthi.k._/"
+};
+
+document.querySelectorAll(".github-link").forEach(link => {link.href =links.github});
+document.querySelectorAll(".linkedin-link").forEach(link => {link.href =links.linkedin});
+document.querySelectorAll(".instagram-link").forEach(link => {link.href =links.instagram});
+   
 // ======= typo animation ======
 const phrases = [
      "Front-End Developer.",
      "Creative Thinker.",
-        "Problem Solver.",
+     "Problem Solver.",
     ];
 
     let phraseIndex = 0;
@@ -15,7 +26,7 @@ const phrases = [
 
       if (!deleting) {
         charIndex++;
-        document.getElementById('output').textContent = current.slice(0, charIndex);
+        document.getElementById('output').textContent = current.slice(0, charIndex);    
 
         if (charIndex === current.length) {
           deleting = true;
@@ -116,30 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
- // ===== SOCIAL MEDIA HANDLER =====
-const github = document.querySelectorAll('.js-github');
-
-github.forEach((github) => {
-     github.addEventListener('click', () => {
-    window.open("https://github.com/karthikg08","_blank");
-});
-});
-
-const linkedin = document.querySelectorAll('.js-linkedin');
-
-linkedin.forEach((linkedin) => {
-    linkedin.addEventListener('click', () => {
-    window.open("https://www.linkedin.com/in/karthikg12/","_blank");
-});
-});
-
-const instagram = document.querySelectorAll('.js-instagram');
-
-instagram.forEach((instagram) => {
-    instagram.addEventListener('click', () => {
-    window.open("https://instagram.com/i.kxrthik","_blank");
-});
-});
+ 
 
 
 
@@ -261,10 +249,12 @@ function showMessage(text, type) {
 
         //Close menu when scrolling 
         document.addEventListener('scroll', () => {
-            menuToggle.classList.remove('active');
-            nav.classList.remove('active');
-            navOverlay.classList.remove('active');
-        });
+            if (nav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                navOverlay.classList.remove('active');
+            }
+        }, { passive: true });
 
         // Close menu on ESC key
         document.addEventListener('keydown', (e) => {
@@ -276,3 +266,164 @@ function showMessage(text, type) {
         });
     
     
+
+
+        /**
+ * ==========================================================================
+ * PARTICLE LAYER (Canvas 2D)
+ * ----------------------------------------------------------------------
+ * Why canvas instead of more DOM nodes: hundreds of DOM elements each with
+ * their own animation would hurt layout/paint performance. A single canvas
+ * redrawn via requestAnimationFrame is far cheaper for many small dots.
+ *
+ * The CSS cubes above (GPU-composited transforms) handle the "big, chunky
+ * 3D shape" look; this canvas handles "lots of small ambient motion" —
+ * splitting the work this way keeps both layers lightweight.
+ * ==========================================================================
+ */
+(function () {
+  'use strict';
+ 
+  // ---- Config: tweak these to customize behavior ----
+  const CONFIG = {
+    particleCount: 70,          // fewer particles = better performance on low-end devices
+    minRadius: 0.6,
+    maxRadius: 2.2,
+    speed: 0.15,                // base drift speed, px per frame (multiplied per-particle)
+    connectDistance: 110,       // px — draw a faint line between particles closer than this
+    color: getComputedStyle(document.documentElement)
+             .getPropertyValue('--particle-color').trim() || '255, 255, 255'
+  };
+ 
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  const hero = canvas.closest('.hero');
+ 
+  let particles = [];
+  let width = 0, height = 0;
+  let animationId = null;
+ 
+  // Respect the same reduced-motion preference the CSS honors.
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ 
+  /** Resize the canvas to match its container, accounting for device pixel ratio. */
+  function resize() {
+    const rect = hero.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2); // cap DPR to avoid huge canvases on 4K/mobile
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+ 
+  /** Create the initial particle set with randomized position, size, and velocity. */
+  function createParticles() {
+    particles = Array.from({ length: CONFIG.particleCount }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: CONFIG.minRadius + Math.random() * (CONFIG.maxRadius - CONFIG.minRadius),
+      vx: (Math.random() - 0.5) * CONFIG.speed,
+      vy: (Math.random() - 0.5) * CONFIG.speed
+    }));
+  }
+ 
+  /** Advance and draw a single animation frame. */
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+ 
+    // Update + draw particles
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+ 
+      // Wrap around edges instead of bouncing — keeps motion continuous and simple
+      if (p.x < 0) p.x = width; else if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height; else if (p.y > height) p.y = 0;
+ 
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${CONFIG.color}, 0.6)`;
+      ctx.fill();
+    }
+ 
+    // Draw faint connecting lines between nearby particles (cheap "network" depth effect)
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONFIG.connectDistance) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(${CONFIG.color}, ${0.12 * (1 - dist / CONFIG.connectDistance)})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+ 
+    animationId = requestAnimationFrame(draw);
+  }
+ 
+  /** Pause the animation when the hero is off-screen (e.g. user scrolled past it). */
+  function observeVisibility() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (!animationId) draw();
+        } else if (animationId) {
+          cancelAnimationFrame(animationId);
+          animationId = null;
+        }
+      });
+    }, { threshold: 0 });
+    io.observe(hero);
+  }
+ 
+  function init() {
+    resize();
+    createParticles();
+ 
+    if (prefersReducedMotion) return; // canvas is hidden via CSS in this case too
+ 
+    draw();
+    observeVisibility();
+ 
+    // Debounce resize so we're not rebuilding particles on every pixel of a drag-resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        resize();
+        createParticles();
+      }, 200);
+    });
+  }
+ 
+  init();
+})();
+
+/* ============= viewport =========*/
+
+let vh = window.innerHeight;
+
+function setVH() {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+
+setVH();
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setVH, 150); // wait for the toolbar animation to finish
+});
+
+// orientation change should update immediately
+window.addEventListener('orientationchange', () => {
+    setTimeout(setVH, 300);
+});

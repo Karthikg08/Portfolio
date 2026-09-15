@@ -4,20 +4,30 @@
     box-sizing: border-box; 
 }
 body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background:linear-gradient(90deg, #00121d, #005766);
-    background-color: #002438;
-    
-    min-height: 100vh;
-   
+    font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+    width: 100%;
     overflow-x: hidden;
-
+    overflow-y: auto;
     color: rgb(248, 255, 255);
-    padding-top: 70px;
+    background: linear-gradient(
+        135deg,
+        #00111a 40%,
+        #013f41 60%,
+        #1a2f4e 70%,
+        #000000 100%
+    );
+
+    
+    
 }  
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+     
+    
 }
+
 section {
     overflow-x: hidden;
     scroll-margin-top: 70px; /* Adjust based on your header height */
@@ -25,17 +35,14 @@ section {
 .home, .about, .skills, .projects, .contact {
     width: 100%;
     overflow: hidden;
+    min-height: calc(var(--vh, 1vh) * 100 - 70px);
+    
+    
+    
 }
 
 :root{
     
-    --bg-home: transparent;
-    --bg-home1: transparent;
-    --bg-about: transparent;
-    --bg-skills: transparent;
-    
-    --bg-project: transparent;
-    --bg-contact: transparent;
     /*skill section */
     --bg-skill-card: #010b29;
     --radius-lg: 8px;
@@ -49,7 +56,6 @@ section {
   
   transition: all 0.6s ease;
 }
-
 .show {
   opacity: 1;
   transform: translateY(0);
@@ -59,9 +65,9 @@ section {
 
 
 
+
 /* header */
 .header{
-    
     position: fixed;
     top: 0;
     left: 0;
@@ -70,11 +76,12 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    background: transparent;
+    height: 70px;
+    width: 100%;
+    padding: 0 20px;
+    background-color: rgb(20, 20, 20);
     color: whitesmoke;
-    box-shadow: 0 12px 30px rgba(51, 50, 50, 0.959);
+    box-shadow: 0 5px 50px rgba(20, 20, 20, 0.959);
     
 }
 
@@ -90,8 +97,6 @@ section {
 
 
 /* sidebar */
-
-
 .sidebar{
     position: fixed;
     top: 0;
@@ -109,10 +114,11 @@ section {
     transform: translateX(150%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
+    will-change: transform;
     
 }
 .sidebar.active {
-     transform: translateX(100%);
+     transform: translateX(0%);
 }
 
 .sba::before {
@@ -129,8 +135,6 @@ section {
 }
 .sba {
     display: block;
-    padding: 16px 20px;
-    color: #e0e0e0;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
@@ -139,11 +143,11 @@ section {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    text-decoration: none;
     color: rgb(255, 255, 255);
     margin-left: 20px;
-    font-size: 18px;
-    font-weight: 600;
+    width: 100%;
+    padding: 1rem 1rem ;
+    
 }
 
 .sba:hover {
@@ -155,16 +159,11 @@ section {
 .sba:hover::before {
     transform: scaleY(1);
 }
-.sidebar a {
-    width: 100%;
-    padding: 1rem 1rem ;
-}
+
 
 .menu-toggle {
     display: none;
     position: relative;
-
-
     border: none;
     width: 40px;
     height: 40px;
@@ -224,8 +223,6 @@ section {
 
 
 /* nav items */
-
-
 .navtext {
     position: relative;
     text-decoration: none;
@@ -248,7 +245,7 @@ section {
   transform: translateX(-50%);
 }
 .navtext:hover {
-    color: #b4ffe0;  /* ← ADD THIS (change to blue) */
+    color: #e3eea2;  /* ← ADD THIS (change to blue) */
 }
 
 .navtext:hover::after {
@@ -259,32 +256,35 @@ section {
 }
 
 /* home section */
-.home, .about {
-    --bg-home: transparent;
+.home{
+    margin-top: 70px;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    min-height: 550px;
     gap: 10px;
 }
 .home1, .aboutimg{
+    z-index:2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-home1);
+   
+    height: auto;
+    
     
 }
 
 .profile{
     border-radius: 50%;
-    border-width: 0;
-    width: 100%;
-    padding: 10px;
-    max-width: 350px;
-    height: 350px;
-    background-color: rgba(64, 192, 196, 0.247);
+    border: none;
+    object-fit: cover;
+    object-position: center;
+    width: min(80vw, 250px);
+    height: min(80vw, 250px); 
+    padding: 5px;
+    background: linear-gradient(90deg, #291b0d, #d3d0a2,#d3d0a2, #291b0d);
     aspect-ratio: 1 / 1;
-    box-shadow: 0 10px 90px rgba(64, 191, 196, 0.774);
+    box-shadow: 0 10px 90px rgba(115, 174, 252, 0.555);
 }
 .imgside{
     display: flex;
@@ -293,25 +293,29 @@ section {
     
 }
 .textside, .abouttext{
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 5px;
     padding: 20px;
+    
 }
 .mynameup{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: whitesmoke;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight:500;
 }
 .myname{
-    background: linear-gradient(90deg, #3ec2ff, #1417d1);
+    background: linear-gradient(90deg, #eaff74, #dbdbc7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 500;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .cursor::after {
       content: '█';
@@ -330,17 +334,12 @@ section {
    
 }
 
-
-
-.butns {
-    padding: 10px 0px;
-    
-}
-
-
 .lshome{
-    align-self: flex-start;
-    zoom: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    
 }
 .frtendnm{
     color:rgb(0, 255, 115);
@@ -348,9 +347,12 @@ section {
 }
 .logo{
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    width: 240px;
     align-items: center;
     gap: 20px;
+    padding: 10px 0;
+    
     
 
 }
@@ -362,7 +364,7 @@ section {
     border: 2px solid rgba(255, 251, 195, 0.938);
     transition: transform 0.3s ease-in-out;   
     text-decoration: none; 
-    padding:0px ; 
+    
     background-color: transparent;
     color: rgb(253, 252, 185);
     border-radius: 50%;
@@ -372,16 +374,42 @@ section {
 .logo a:hover {
     cursor: pointer;
     color: rgb(255, 255, 255);
-    background-color: rgba(98, 120, 219, 0.699);
+    
     transform: scale(1.2) translateZ(50px) ;
     box-shadow: 0 5px 20px rgb(30, 30, 31);
 }
 
-.btn{
+.butns {
+    
+   display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    
+}
+.res-btn{
     padding: 8px 15px;
     text-decoration: none;
     border: 1px solid rgba(255, 251, 195, 0.938);
-    background-color: #8f1d0980;
+    background-color: #551111af;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.1s ease-in-out;
+   
+}
+
+.res-btn:hover,.pjt-btn:hover {
+    border: 1px solid rgba(255, 251, 195, 0.938);
+    transform: translateZ(30px) scale(1.06);
+}
+.pjt-btn{
+    padding: 8px 15px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 251, 195, 0.938);
+    background-color: transparent;
     color: rgb(255, 255, 255);
     border-radius: 10px;
     cursor: pointer;
@@ -390,70 +418,179 @@ section {
     display: inline-block;
     transition: all 0.1s ease-in-out;
     
-    
-   
-    
-   
-    
-    
 }
-.btn:hover {
-    border: 1px solid rgba(255, 251, 195, 0.938);
-    
 
-    transform: translateZ(30px) scale(1.06);
-}
+
+  /* ==========================================================================
+     CUSTOMIZATION LAYER
+     Change these CSS custom properties to re-theme or re-time the whole
+     effect without touching any other rule below.
+     ========================================================================== */
+  :root {
+    --hero-bg-start:   #010103;   /* gradient start color   */
+    --hero-bg-mid:     #0a0729;   /* gradient mid color     */
+    --hero-bg-end:     #03030e;   /* gradient end color     */
+    --particle-color:  255, 255, 255; /* RGB triplet, used with alpha in canvas */
+    --rotate-speed:    18s;       /* lower = faster spin    */
+    --float-speed:     6s;        /* lower = faster bob     */
+  }
+ 
+  /* ==========================================================================
+     HERO SECTION — the positioning context for every animated layer
+     ========================================================================== */
+  .hero {
+    position: relative;
+    overflow: hidden;               /* clips shapes that drift past the edges */
+    background: linear-gradient(135deg, var(--hero-bg-start), var(--hero-bg-mid), var(--hero-bg-end));
+    perspective: 1100px;            /* gives child 3D transforms real depth   */
+  }
+ 
+  /* Canvas sits behind the shapes and behind the text, full-bleed */
+  .hero__particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+ 
+  /* Container for the floating 3D shapes; itself does not rotate */
+  .hero__shapes {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    pointer-events: none;           /* clicks pass through to real content   */
+  }
+ 
+  /* ==========================================================================
+     3D SHAPES
+     Each shape is a small div (or cube of 6 faces) rotated continuously on
+     multiple axes via CSS keyframes — GPU-accelerated, no JS per frame.
+     ========================================================================== */
+  .shape {
+    position: absolute;
+    transform-style: preserve-3d;
+    will-change: transform;         /* hints the browser to use the GPU layer */
+    animation:
+      spin var(--rotate-speed) linear infinite,
+      float var(--float-speed) ease-in-out infinite;
+  }
+ 
+  /* A simple 3D cube built from 6 faces (kept lightweight: flat colors, no images) */
+  .cube__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.55;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+ 
+  .shape--cube-1 { top: 15%; left: 12%; width: 90px;  height: 90px;  animation-duration: var(--rotate-speed), var(--float-speed); }
+  .shape--cube-2 { top: 62%; left: 78%; width: 60px;  height: 60px;  animation-duration: calc(var(--rotate-speed) * 1.4), calc(var(--float-speed) * 1.3); }
+  .shape--cube-3 { top: 70%; left: 20%; width: 45px;  height: 45px;  animation-duration: calc(var(--rotate-speed) * 0.7), calc(var(--float-speed) * 0.8); }
+  .shape--cube-4 { top: 20%; left: 82%; width: 70px;  height: 70px;  animation-duration: calc(var(--rotate-speed) * 1.1), calc(var(--float-speed) * 1.1); }
+ 
+  .shape--cube-1 .cube__face { background: var(--shape-color-1); }
+  .shape--cube-2 .cube__face { background: var(--shape-color-2); }
+  .shape--cube-3 .cube__face { background: var(--shape-color-3); }
+  .shape--cube-4 .cube__face { background: var(--shape-color-1); }
+ 
+  /* Position each of the 6 faces to form a cube using translateZ + rotation */
+  .cube__face:nth-child(1) { transform: rotateY(0deg)    translateZ(calc(var(--face-offset, 45px))); }
+  .cube__face:nth-child(2) { transform: rotateY(90deg)   translateZ(calc(var(--face-offset, 45px))); }
+  .cube__face:nth-child(3) { transform: rotateY(180deg)  translateZ(calc(var(--face-offset, 45px))); }
+  .cube__face:nth-child(4) { transform: rotateY(-90deg)  translateZ(calc(var(--face-offset, 45px))); }
+  .cube__face:nth-child(5) { transform: rotateX(90deg)   translateZ(calc(var(--face-offset, 45px))); }
+  .cube__face:nth-child(6) { transform: rotateX(-90deg)  translateZ(calc(var(--face-offset, 45px))); }
+ 
+  /* Continuous multi-axis rotation — a single keyframe pair keeps it cheap */
+  @keyframes spin {
+    from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    to   { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg); }
+  }
+ 
+  /* Gentle vertical drift layered on top of the rotation for a "floating" feel */
+  @keyframes float {
+    0%, 100% { margin-top: 0px; }
+    50%      { margin-top: -25px; }
+  }
+ 
+ 
+  
+  /* ==========================================================================
+     RESPONSIVENESS — scale shape size/position down on small screens instead
+     of just hiding them, so the effect still reads as "3D" on mobile.
+     ========================================================================== */
+  @media (max-width: 768px) {
+    .shape--cube-1 { width: 55px; height: 55px; --face-offset: 27px; }
+    .shape--cube-2 { width: 40px; height: 40px; --face-offset: 20px; }
+    .shape--cube-3 { width: 32px; height: 32px; --face-offset: 16px; }
+    .shape--cube-4 { width: 45px; height: 45px; --face-offset: 22px; }
+  }
+ 
+  /* ==========================================================================
+     ACCESSIBILITY — respect users who've asked for reduced motion.
+     This is a hard requirement, not a nice-to-have.
+     ========================================================================== */
+  @media (prefers-reduced-motion: reduce) {
+    .shape { animation: none; }
+    .hero__particles { display: none; }
+  }
 
 
 
 /* about section */
 
 /*.about is combine with .home*/
-.aboutimg{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.about {
+    background-image: url("bg-imgs/about-svg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 10px;
 }
+
 .abouttext{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding: 20px;
     
 }
-.gradnt{
-    background: linear-gradient(45deg, #4a98e0, #1417d1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.abt-name{
+    font-weight: 700; font-size: 30px; color: rgb(87, 74, 74);
 }
-
-    
 
 .abouthed{
     align-self: flex-start;
-    
     font-size: 35px;
     color: rgb(252, 255, 212);
-    background-clip: text;
-
+    
 }
 .paraabout{
-    color: whitesmoke;
+    color: rgb(19, 18, 18);
 }
 
-/*skill sec */
+
+
+/*======== skill sec ============*/
 .skills{
-    background-color: var(--bg-skills);
+    background:transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    min-height: 600px;
     gap: 1px;
     padding: 2rem;
     overflow: hidden;
+}
+.sub-skill{
+    font-size: 18px;
+    color: #ccc;
+    align-self:flex-start; 
 }
 .skill-container{
   display: grid;
@@ -491,7 +628,7 @@ section {
       justify-content: space-between;
       margin-bottom: 10px;
     }
-    .skill-icon { font-size: 20px; color: var(--text-secondary); }
+    .skill-icon { font-size: 20px;  }
  
     .skill-level {
       font-size: 11px;
@@ -500,13 +637,10 @@ section {
       font-weight: 500;
     }
     .level-expert      { background: #E1F5EE; color: #085041; }
-    .level-advanced    { background: #E6F1FB; color: #0C447C; }
-    .level-intermediate { background: #FAEEDA; color: #633806; }
- 
+   
     .skill-name {
       font-size: 14px;
       font-weight: 500;
-      color: var(--text-primary);
       margin-bottom: 8px;
     }
  
@@ -527,17 +661,16 @@ section {
     .fill-advanced    { background: #378ADD; }
     .fill-intermediate { background: #EF9F27; }
  
-    .skill-pct { font-size: 11px; color: var(--text-tertiary); text-align: right; }
+    .skill-pct { font-size: 11px;  text-align: right; }
 
 
-/* project section */
+/* ==================== project section ================= */
 .projects{
-    background-color: var(--bg-project);
+    background:transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    min-height: 600px;
     padding: 2rem;
     overflow: hidden;
     
@@ -566,11 +699,11 @@ section {
 
 
 .project-card.featured {
-    border: 2px solid #42281c;
+    border: 2px solid #503427;
 }
 .project-card {
-    background: #fcddddd5;
-    border: 0.5px solid rgba(0, 0, 0, 0.12);
+    background: #fffffff3;
+    
     border-radius: 8px;
     padding: 1.25rem;
     display: flex;
@@ -610,6 +743,8 @@ section {
 .card-points {
     display: flex;
     flex-direction: column;
+    max-height: 150px; 
+    overflow-y: auto;
     gap: 8px;
     flex: 1;
 }
@@ -669,8 +804,8 @@ section {
 }
 .project-card:hover{    
   transform:   scale(1.05) translateZ(50px) ;
-  box-shadow: 0 10px 20px rgba(111, 121, 252, 0.705);
-
+  box-shadow: 0 10px 20px rgba(111, 219, 252, 0.705);
+    border: 2px solid  #0f4061;
 }
  .card-points::-webkit-scrollbar {
       width: 3px;
@@ -718,21 +853,21 @@ section {
 
 
 .contact {
-    background-color: var(--bg-contact);
+    background:transparent;
     border-radius: 0;
-    height: 500px;
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    padding: 0;
     overflow: hidden;
+    gap: 20px;
+    padding: 2rem;
 }
 
 /* Left Side - Contact Info */
 .contact-left {
     flex: 1;
     border-radius: 0;
-    padding: 60px 50px;
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -770,8 +905,8 @@ section {
 .contact-info-icon {
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
+    border: 1px solid #7d89f3;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -793,20 +928,19 @@ section {
 
 .contact-socials {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     margin-top: 40px;
 }
 
 .social-icon {
     width: 45px;
     height: 45px;
-    background: rgba(255, 255, 255, 0.2);
     border: none;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(214, 20, 20);
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -818,14 +952,12 @@ section {
 }
 
 .social-icon:hover {
-    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
 }
 
 /* Right Side - Contact Form */
 .contact-right {
     flex: 1;
-    padding: 60px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -893,7 +1025,7 @@ section {
 .submit-btn {
     width: 100%;
     padding: 14px 32px;
-    background: linear-gradient(135deg, #4360e4 0%, #4b54a2 100%);
+    background: linear-gradient(135deg, #142988 0%, #7d89f3 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -908,7 +1040,7 @@ section {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
+    box-shadow: 0 12px 30px rgba(88, 103, 168, 0.35);
 }
 
 .submit-btn:active {
@@ -942,85 +1074,153 @@ section {
 @media (min-width: 2560px) {
     body{
     font-family: Arial, Helvetica, sans-serif;
-    
-    background-color: var(--bg-body); 
-    min-height: 100vh;
-
+    min-height: calc(100dvh - 100px);
     color: rgb(255, 248, 248);
-    padding-top: 100px;
+    padding-top: 120px;
 
 } 
 .header{
-min-height: 100px;
+min-height: 120px;
 }
 .header-title{
-font-size: 40px;
+    font-size: clamp(2rem, 2vw, 2.5rem);
 
 }
-.resbtn{
-    font-size: 30px;
+.mynameup,.myname{
+    font-size: clamp(3rem, 2vw, 3.5rem);
 }
-nav a{
-    font-size: 24px;
+.mynamedown{
+    margin-top: 20px;
+    font-size: clamp(2rem, 2vw, 2.5rem);
+}
+.profile{
+    width: min(50vw, 400px);
+    height: min(50vw, 400px);
+}
+.res-btn,.pjt-btn{
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+}
+.abt-name{
+    font-size: clamp(2.5rem, 2vw, 3.5rem);
+}
+.paraabout{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.textside{
+    gap: 20px;
+}
+.navtext{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.logo a {
+    min-width: clamp(40px, 5vw, 70px);
+    min-height: clamp(40px, 5vw, 70px);
+    font-size: clamp(2rem, 2vw, 2.5rem);
+
+}
+.logo{
+    min-width: 500px;
+    gap: 30px;
+    
 }
 .home {
     grid-template-columns: repeat(2, 1fr);
-    min-height: 700px;
+    min-height: calc(100dvh - 100px);
     width: 100%;
-    zoom: 1.5;
+    
 }
 .home1 {
     padding: 20px;
    
 }
-.myname {
-    font-size: 3.5rem;
-}
-
-
 
 .about {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    min-height: 700px;
-    zoom: 1.5;
+    min-height: calc(100dvh - 100px);
+    gap: 30px;
     width: 100%;
-    padding: 20px;
+    
 }
 .aboutimg{
-    display: flex;
+     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+   
     
     
 }
 .abouttext{
     padding: 10px;
-    font-size: 20px;
-    
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 .skills, .projects {
-    min-height: 1000px;
-    padding-top: 70px;
+    min-height: calc(100dvh - 100px);
+    
 }
 .abouthed{
-    font-size: 40px;
+    font-size: clamp(3rem, 2vw, 4rem);
 }
 .skill-container{
-    zoom: 1.7;
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr)) ;
+    
+    gap: 2rem;
+    padding-top: 1.5rem;
+    margin: 0 auto;
+    width: 100%;
+    
+}
+.skill-level,.skill-name,.skill-pct{
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
-.project-container{
-    zoom: 1.8;
+
+.skill-top{
+    gap: 10px;
 }
+.skill-card{
+    
+    min-height: 150px;
+    min-width: 200px;
+}
+.sub-skill{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.project-container{
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) ;
+    
+    gap: 2rem;
+    padding-top: 1.5rem;
+    margin: 0 auto;
+    width: 100%;
+    
+}
+.card-points{
+    max-height: 500px; 
+    overflow-y: auto;
+}
+.project-card{
+    min-height: 600px;
+    min-width: 300px;
+}
+
+.card-title,.card-badge,.card-point,.card-tags,.card-icon,.card-link,.tag{
+    font-size: clamp(1rem, 2vw, 1.6rem);
+}
+
 .contact{
-    min-height: 500px;
-    zoom: 1.9;
-    padding: 0;
+    min-height: calc(100dvh - 100px);
+    
+    
+}
+.form-group label,.form-group input, .form-group textarea, .submit-btn, .contact-info-item h3, .contact-info-item p,.contact-left p,.contact-right > p{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
 }
 .footer{
-    zoom: 1.5;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
-
 }
 
 /* laptop breakpoint (768px - 1440px)*/
@@ -1032,13 +1232,8 @@ nav a{
     .home1, .aboutimg{
         padding: 20px;
     }
-    .myname {
-        font-size: 2.5rem;
-    }
-    .profile{
-        max-width: 350px;
-        max-height: 350px;
-    }
+   
+    
    
     
 }
@@ -1048,23 +1243,19 @@ nav a{
 /*===============================================
 tablet breakpoint (768px)*/ 
 @media (max-width: 768px) {
+     body {
+    background-attachment: scroll;
+  }
     .home, .about {
         grid-template-columns: 1fr 1fr;
-        min-height: 500px;
         width: 100%;
     }
    
     .home1 {
         padding: 20px;
     }
-    .myname {
-        font-size: 2rem;
-    }
-    .profile{
-        max-width: 250px;
-        max-height: 250px;
-        
-    }
+    
+    
     .abouthed{
         padding-top: 0px;
         
@@ -1079,7 +1270,7 @@ tablet breakpoint (768px)*/
     }
     .contact-left, .contact-right {
         
-        padding: 30px 20px;
+        
         width: 100%;
     }
     .contact-socials {
@@ -1116,8 +1307,8 @@ tablet breakpoint (768px)*/
 
     /* project section */
     .projects, .skills {
-        padding: 30px 20px;
-         min-height: 500px;
+        
+         min-height: calc(100dvh - 70px);
     }
  
     .project-container {
@@ -1141,7 +1332,7 @@ tablet breakpoint (768px)*/
     .skill-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
-        padding: 1.5rem;
+        
         max-width: 900px;
         height: auto;
     }
@@ -1174,8 +1365,8 @@ tablet breakpoint (768px)*/
     }
     .home {
         grid-template-columns:  1fr;    
-        height: auto;
-        padding: 20px;
+        
+        
     }
     .home1 {
         display: flex;
@@ -1184,16 +1375,12 @@ tablet breakpoint (768px)*/
         align-items: center;
         padding: 20px 10px;
     }
-    .myname {
-        font-size: 1.5rem;
-    }
-    .profile {
-        max-width: 250px;
-    }
+    
+    
     .textside{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     align-items: center;
     gap: 10px;
 }
@@ -1203,20 +1390,17 @@ tablet breakpoint (768px)*/
     justify-content: center;
     align-content: center;
    
-    min-height: 500px;
-    padding: 20px;
+    
+    
 }
 
-.skill-container, .project-container {
-    padding: 10px;
-}
 .project-container {
     grid-template-columns: 1fr; 
 
     /* ... more mobile styles */
 }
 .mynamedown{
-     min-height: 3.4rem;
+     min-height: 2.0em;
 }
 
 }
@@ -1228,8 +1412,6 @@ tablet breakpoint (768px)*/
     box-shadow: none;
   }
 }
-
-
 /*footer*/
 .footer {
 background-color: #3f4f6b;
