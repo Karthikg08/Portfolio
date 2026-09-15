@@ -406,3 +406,24 @@ function showMessage(text, type) {
  
   init();
 })();
+
+/* ============= viewport =========*/
+
+let vh = window.innerHeight;
+
+function setVH() {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+
+setVH();
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setVH, 150); // wait for the toolbar animation to finish
+});
+
+// orientation change should update immediately
+window.addEventListener('orientationchange', () => {
+    setTimeout(setVH, 300);
+});
