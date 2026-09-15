@@ -5,15 +5,20 @@
 }
 body{
     font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    overscroll-behavior-y: contain;
+    
     margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     color: rgb(248, 255, 255);
     background: linear-gradient(
-        var(--gradient-angle),
-        var(--bg-color-1) 0%,
-        var(--bg-color-2) 50%,
-        var(--bg-color-3) 100%
+        135deg,
+        #00111a 40%,
+        #013f41 60%,
+        #1a2f4e 70%,
+        #000000 100%
     );
+
     
     
 }  
@@ -30,8 +35,8 @@ section {
 .home, .about, .skills, .projects, .contact {
     width: 100%;
     overflow: hidden;
-    
     min-height: calc(100dvh - 70px);
+    min-height: calc(100svh - 70px);
     
     
 }
@@ -54,62 +59,6 @@ section {
 .show {
   opacity: 1;
   transform: translateY(0);
-}
-
-:root {
- 
-  --bg-color-1: #012027;   /* deepest tone   — anchors the top/left    */
-  --bg-color-2: #04030f;   /* mid tone       — the bulk of the surface */
-  --bg-color-3: #0a4355;   /* lightest tone  — subtle lift at the edge */
-
-  /* ---- Gradient behavior -------------------------------------------------
-     Centralizing these means every section can be re-themed or re-angled
-     from one place instead of editing each section's background rule. */
-  --gradient-angle: 160deg;     /* direction of the sweep               */
-  --section-padding: clamp(4rem, 8vw, 7rem) 1.5rem; /* consistent rhythm between sections */
-}
-
-
-.skills,.projects,.contact {
-  position: relative;
-  padding: var(--section-padding);
-  overflow: hidden;                /* keeps the radial glow from bleeding into neighbors */
-}
-
-/* The ::before pseudo-element carries the per-section glow so the
-   section's real content (headings, cards, text) stays on its own layer
-   and is never affected by background positioning tweaks. */
-.skills::before, .projects::before, .contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(
-    ellipse at top left,
-    rgba(255, 255, 255, 0) 0%,   /* faint light lift, not a color — stays "elegant" not "colorful" */
-    transparent 60%
-  );
-  pointer-events: none;
-}
-
-/* Alternate the glow's origin on every other section purely via a
-   modifier class — an easy way to add subtle rhythm as the user scrolls
-   without introducing a second gradient system. */
-.dark-section--alt::before {
-  background: radial-gradient(
-    ellipse at bottom right,
-    rgba(255, 255, 255, 0.354) 0%,
-    transparent 60%
-  );
-}
-
-/* ==========================================================================
-   SECTION DIVIDERS (optional)
-   A hairline instead of a hard color change reinforces the "one smooth
-   surface" feel between sections, rather than stacking flat-colored bands.
-   ========================================================================== */
-.dark-section + .dark-section {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 
@@ -311,8 +260,6 @@ section {
 
 /* home section */
 .home{
-    
-   
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 10px;
@@ -334,7 +281,7 @@ section {
     border: none;
     object-fit: cover;
     object-position: center;
-   width: min(80vw, 250px);
+    width: min(80vw, 250px);
     height: min(80vw, 250px); 
     padding: 5px;
     background: linear-gradient(90deg, #291b0d, #d3d0a2,#d3d0a2, #291b0d);
@@ -460,8 +407,6 @@ section {
 
 .res-btn:hover,.pjt-btn:hover {
     border: 1px solid rgba(255, 251, 195, 0.938);
-    
-
     transform: translateZ(30px) scale(1.06);
 }
 .pjt-btn{
@@ -649,15 +594,15 @@ section {
     color: rgb(19, 18, 18);
 }
 
-/*skill sec */
+
+
+/*======== skill sec ============*/
 .skills{
     background:transparent;
-   
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    
     gap: 1px;
     padding: 2rem;
     overflow: hidden;
@@ -739,15 +684,13 @@ section {
     .skill-pct { font-size: 11px;  text-align: right; }
 
 
-/* project section */
+/* ==================== project section ================= */
 .projects{
     background:transparent;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    
     padding: 2rem;
     overflow: hidden;
     
@@ -1467,7 +1410,7 @@ tablet breakpoint (768px)*/
     justify-content: center;
     align-content: center;
    
-    min-height: calc(100dvh - 70px);
+    
     
 }
 
