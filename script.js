@@ -3,14 +3,13 @@
 const links = {
   github: "https://github.com/Karthikg08/",
   linkedin: "https://www.linkedin.com/in/karthikg12/",
-  instagram: "https://www.instagram.com/kxrthik.11/"
+  instagram: "https://www.instagram.com/kxrthi.k._/"
 };
 
-document.getElementById("github-link").href = links.github;
-document.getElementById("linkedin-link").href = links.linkedin;
-document.getElementById("instagram-link").href = links.instagram;
-console.log(document.getElementById("instagram-link").href)   
-console.log(links.instagram)   
+document.querySelectorAll(".github-link").forEach(link => {link.href =links.github});
+document.querySelectorAll(".linkedin-link").forEach(link => {link.href =links.linkedin});
+document.querySelectorAll(".instagram-link").forEach(link => {link.href =links.instagram});
+   
 // ======= typo animation ======
 const phrases = [
      "Front-End Developer.",
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
- // ===== SOCIAL MEDIA HANDLER =====
+ 
 
 
 
