@@ -253,6 +253,7 @@ section {
 
 /* home section */
 .home{
+    background: linear-gradient(150deg, #8fd8eb, #180e0b, #06131b);
     margin-top: 70px;
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -417,121 +418,7 @@ section {
 }
 
 
-  /* ==========================================================================
-     CUSTOMIZATION LAYER
-     Change these CSS custom properties to re-theme or re-time the whole
-     effect without touching any other rule below.
-     ========================================================================== */
-  :root {
-    --hero-bg-start:   #010103;   /* gradient start color   */
-    --hero-bg-mid:     #0a0729;   /* gradient mid color     */
-    --hero-bg-end:     #03030e;   /* gradient end color     */
-    --particle-color:  255, 255, 255; /* RGB triplet, used with alpha in canvas */
-    --rotate-speed:    18s;       /* lower = faster spin    */
-    --float-speed:     6s;        /* lower = faster bob     */
-  }
- 
-  /* ==========================================================================
-     HERO SECTION — the positioning context for every animated layer
-     ========================================================================== */
-  .hero {
-    position: relative;
-    overflow: hidden;               /* clips shapes that drift past the edges */
-    background: linear-gradient(135deg, var(--hero-bg-start), var(--hero-bg-mid), var(--hero-bg-end));
-    perspective: 1100px;            /* gives child 3D transforms real depth   */
-  }
- 
-  /* Canvas sits behind the shapes and behind the text, full-bleed */
-  .hero__particles {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
- 
-  /* Container for the floating 3D shapes; itself does not rotate */
-  .hero__shapes {
-    position: absolute;
-    inset: 0;
-    transform-style: preserve-3d;
-    pointer-events: none;           /* clicks pass through to real content   */
-  }
- 
-  /* ==========================================================================
-     3D SHAPES
-     Each shape is a small div (or cube of 6 faces) rotated continuously on
-     multiple axes via CSS keyframes — GPU-accelerated, no JS per frame.
-     ========================================================================== */
-  .shape {
-    position: absolute;
-    transform-style: preserve-3d;
-    will-change: transform;         /* hints the browser to use the GPU layer */
-    animation:
-      spin var(--rotate-speed) linear infinite,
-      float var(--float-speed) ease-in-out infinite;
-  }
- 
-  /* A simple 3D cube built from 6 faces (kept lightweight: flat colors, no images) */
-  .cube__face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.55;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-  }
- 
-  .shape--cube-1 { top: 15%; left: 12%; width: 90px;  height: 90px;  animation-duration: var(--rotate-speed), var(--float-speed); }
-  .shape--cube-2 { top: 62%; left: 78%; width: 60px;  height: 60px;  animation-duration: calc(var(--rotate-speed) * 1.4), calc(var(--float-speed) * 1.3); }
-  .shape--cube-3 { top: 70%; left: 20%; width: 45px;  height: 45px;  animation-duration: calc(var(--rotate-speed) * 0.7), calc(var(--float-speed) * 0.8); }
-  .shape--cube-4 { top: 20%; left: 82%; width: 70px;  height: 70px;  animation-duration: calc(var(--rotate-speed) * 1.1), calc(var(--float-speed) * 1.1); }
- 
-  .shape--cube-1 .cube__face { background: var(--shape-color-1); }
-  .shape--cube-2 .cube__face { background: var(--shape-color-2); }
-  .shape--cube-3 .cube__face { background: var(--shape-color-3); }
-  .shape--cube-4 .cube__face { background: var(--shape-color-1); }
- 
-  /* Position each of the 6 faces to form a cube using translateZ + rotation */
-  .cube__face:nth-child(1) { transform: rotateY(0deg)    translateZ(calc(var(--face-offset, 45px))); }
-  .cube__face:nth-child(2) { transform: rotateY(90deg)   translateZ(calc(var(--face-offset, 45px))); }
-  .cube__face:nth-child(3) { transform: rotateY(180deg)  translateZ(calc(var(--face-offset, 45px))); }
-  .cube__face:nth-child(4) { transform: rotateY(-90deg)  translateZ(calc(var(--face-offset, 45px))); }
-  .cube__face:nth-child(5) { transform: rotateX(90deg)   translateZ(calc(var(--face-offset, 45px))); }
-  .cube__face:nth-child(6) { transform: rotateX(-90deg)  translateZ(calc(var(--face-offset, 45px))); }
- 
-  /* Continuous multi-axis rotation — a single keyframe pair keeps it cheap */
-  @keyframes spin {
-    from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-    to   { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg); }
-  }
- 
-  /* Gentle vertical drift layered on top of the rotation for a "floating" feel */
-  @keyframes float {
-    0%, 100% { margin-top: 0px; }
-    50%      { margin-top: -25px; }
-  }
- 
- 
   
-  /* ==========================================================================
-     RESPONSIVENESS — scale shape size/position down on small screens instead
-     of just hiding them, so the effect still reads as "3D" on mobile.
-     ========================================================================== */
-  @media (max-width: 768px) {
-    .shape--cube-1 { width: 55px; height: 55px; --face-offset: 27px; }
-    .shape--cube-2 { width: 40px; height: 40px; --face-offset: 20px; }
-    .shape--cube-3 { width: 32px; height: 32px; --face-offset: 16px; }
-    .shape--cube-4 { width: 45px; height: 45px; --face-offset: 22px; }
-  }
- 
-  /* ==========================================================================
-     ACCESSIBILITY — respect users who've asked for reduced motion.
-     This is a hard requirement, not a nice-to-have.
-     ========================================================================== */
-  @media (prefers-reduced-motion: reduce) {
-    .shape { animation: none; }
-    .hero__particles { display: none; }
-  }
 
 
 
