@@ -32,16 +32,10 @@ html {
 section {
     overflow-x: hidden;
     scroll-margin-top: 70px; /* Adjust based on your header height */
-    min-height:calc(100dvh - 70px)
-}
-.home, .about, .skills, .projects, .contact {
+    min-height:calc(100svh - 70px);
     width: 100%;
-    overflow: hidden;
-    
-    
-    
-    
 }
+
 
 :root{
     
