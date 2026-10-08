@@ -28,14 +28,16 @@ html {
     
 }
 
+
 section {
     overflow-x: hidden;
     scroll-margin-top: 70px; /* Adjust based on your header height */
+    min-height:calc(100dvh - 70px)
 }
 .home, .about, .skills, .projects, .contact {
     width: 100%;
     overflow: hidden;
-    min-height: calc(var(--vh, 1vh) * 100 - 70px);
+    
     
     
     
@@ -86,7 +88,7 @@ section {
 }
 
 .header-title{
-    background: linear-gradient(90deg, #66ecfd, #0058fc);
+    background: linear-gradient(90deg, #fdf8aa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
